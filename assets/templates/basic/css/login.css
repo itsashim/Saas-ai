@@ -1,0 +1,77 @@
+.form {
+  background-color: #0c0a20;
+  color: #efeef1;
+  padding: 4rem;
+}
+
+.form a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+}
+
+.form_wrap {
+  background-color: #18162b;
+  width: min(100% - 3rem, 700px);
+  padding: 4rem;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.form_wrap h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.form_wrap span {
+  display: block;
+  margin: 2rem 0;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.form_wrap label {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.login_form input {
+  background-color: #29273b;
+  padding: 1.3rem 1rem;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+}
+.login_form input::placeholder {
+  color: #7b7677;
+  font-size: 1.3rem;
+}
+
+.form .hero_btn {
+  background-color: #645bf9;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 100px;
+  padding: 1.3rem;
+  border: none;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  * {
+    font-size: 13px;
+  }
+  .form {
+    padding: 0;
+  }
+  .form_wrap {
+    padding: 2rem;
+  }
+}
