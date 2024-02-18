@@ -9,7 +9,8 @@
         <div class="container">
             <nav class="navbar navbar-expand-xl align-items-center">
                 <a class="site-logo site-title" href="{{ route('home') }}">
-                    <img src="{{ getImage(getFilePath('logoIcon') . '/logo.png') }}" alt="logo"> AI Tool Cart
+                    <img src="{{ getImage(getFilePath('logoIcon') . '/logo.png') }}" alt="logo" class="me-2"> AI TOOL
+                    KART
                 </a>
                 <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -18,7 +19,9 @@
                 </button>
                 <div class="collapse navbar-collapse mt-lg-0 mt-3" id="navbarSupportedContent">
                     <div class="nav_wrap m-auto">
-                        <ul class="navbar-nav main-menu ">
+                        <ul class="navbar-nav main-menu align-items-center">
+                            <li class="nav-home-icon d-flex justify-content-center align-items-center"><img
+                                    src="{{ asset('assets/images/icons/nav-home-icon.png') }}" alt=""></li>
                             <li><a href="{{ route('coupon.search') }}">@lang('AI tools')</a></li>
                             <li><a href="{{ url('submit') }}">@lang('AI Academy ')</a></li>
                             <li><a href="{{ route('home') }}">@lang('About Us')</a></li>

@@ -3015,7 +3015,6 @@ label {
 
 .header__bottom .hero_btn {
   background: linear-gradient(
-    90deg,
     rgba(37, 144, 255, 1) 5%,
     rgba(145, 12, 192, 1) 81%
   );
@@ -3047,7 +3046,7 @@ label {
 
 .header .site-logo.site-title {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .header .main-menu {
@@ -3058,6 +3057,17 @@ label {
 
 .header .nav_wrap {
   padding: 2px;
+  border-radius: 100px;
+  background: linear-gradient(
+    90deg,
+    rgba(37, 144, 255, 1) 5%,
+    rgba(145, 12, 192, 1) 81%
+  );
+}
+
+.nav-home-icon {
+  width: 3rem;
+  height: 2.2rem;
   border-radius: 100px;
   background: linear-gradient(
     90deg,
@@ -3130,6 +3140,7 @@ label {
 }
 
 .header .main-menu li a {
+  font-size: 0.8rem;
   font-family: "Sora", sans-serif;
   font-weight: 500;
   padding: 0.75rem 0.9375rem 0.75rem 0;
@@ -3138,8 +3149,11 @@ label {
 @media (max-width: 1199px) {
   .header .main-menu li a {
     padding: 0.5rem 0;
-    color: black;
     display: block;
+  }
+  .header__bottom .hero_btn {
+    margin-inline: auto;
+    margin-top: 1rem;
   }
 }
 
@@ -4607,23 +4621,24 @@ div.dashboard-table-card .card-header {
 
 .hero_wrap {
   display: flex;
-  /*height: 80dvh;*/
+  padding-top: 9rem;
   background-color: #0c0a20;
   flex-direction: column;
   justify-content: center;
 }
 .hero_wrap h1 {
   color: #efeef1;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 2.4rem;
 }
 .hero_wrap p {
+  margin-top: 0.7rem;
   color: #efeef1;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   line-height: 1.5;
   width: min(100% - 3rem, 40ch);
 }
-.hero_wrap span {
+.hero_wrap h1 span {
   font-weight: 700;
   /* background: linear-gradient(90deg, #bfcdf7, #c1b4f5); */
 }
@@ -4657,6 +4672,8 @@ div.dashboard-table-card .card-header {
 }
 
 .hero_search_wrap {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
   background: linear-gradient(
     90deg,
     rgba(37, 144, 255, 1) 5%,
@@ -4666,6 +4683,22 @@ div.dashboard-table-card .card-header {
   width: min(100% - 3rem, 600px);
   border-radius: 100px;
 }
+.magnifying_glass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 2.3rem;
+  background: linear-gradient(
+    90deg,
+    rgba(37, 144, 255, 1) 5%,
+    rgba(145, 12, 192, 1) 81%
+  );
+  border-radius: 100%;
+}
+/* .magnifying_glass img {
+  width: 90%;
+} */
 
 .hero_search {
   background: #1e1e1e;
@@ -4688,6 +4721,35 @@ div.dashboard-table-card .card-header {
   stroke: white;
 }
 
+/* Types tabs start */
+.types_tab {
+  width: 100%;
+  max-width: 870px;
+  margin: 0 auto;
+}
+.tab_wrap {
+  padding: 1px;
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    rgba(37, 144, 255, 1) 5%,
+    rgba(145, 12, 192, 1) 81%
+  );
+}
+.tab_wrap .tab {
+  background: #1e1e1e;
+  padding: 0.2rem 0.6rem;
+  border-radius: 8px;
+  color: white;
+}
+/* Types tabs Ends */
+
+/* Hero Decorations Start */
+
+/* Hero Decorations End */
+.decoration_wrap .star {
+  width: 3rem;
+}
 /*Explore TAbs Section Start*/
 .explore_tabs {
   padding: 2rem 7%;
