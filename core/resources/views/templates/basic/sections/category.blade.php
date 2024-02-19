@@ -1,4 +1,5 @@
-@php
+{{-- ORIGINAL CATEGORY SECTION OF WEBSITE START --}}
+{{-- @php
     $category = getContent('category.content', true);
     $categories = \App\Models\Category::where('status', 1)->latest()->get();
 @endphp
@@ -12,7 +13,7 @@
             </div>
             <div class="col-lg-9 ps-lg-4">
                 <div class="category-slider">
-                    @foreach($categories as $category)
+                    @foreach ($categories as $category)
                         <div class="single-slide">
                             <div class="category-item has--link">
                                 <a href="{{ route('coupon.filter.type', ['category', $category->id]) }}" class="item--link"></a>
@@ -25,4 +26,15 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
+
+{{-- ORIGINAL CATEGORY SECTION OF WEBSITE END --}}
+
+
+{{-- ADDED SECTION  START --}}
+<section class="about_sec">
+    <div class="about_wrapper">
+
+    </div>
+</section>
+{{-- ADDED SECTION  END --}}

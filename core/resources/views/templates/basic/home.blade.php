@@ -110,11 +110,44 @@
                 <div class="decoration2">
                     <img class="star" src="{{ asset('assets/images/icons/herostar.png') }}" alt="">
                 </div>
+                {{-- Infinite section decoration start --}}
+                <div class="decoration3 d-none d-lg-block">
+                    <img class="discoImage" src="{{ asset('assets/images/icons/discoImage.png') }}" alt="">
+                </div>
+                {{-- Infinite section decoration Ends  --}}
+
             </div>
             {{-- Decorations End --}}
+            {{-- Infinite Inline Scroll Starts --}}
+            <div class="infinite-scroll_wrap">
+                <div class="infinite-scroll  py-3">
+                    <p>Top-rated AI tools</p>
+                    <p>Testes and Trusted</p>
+                    <p>Quality selection</p>
+                    <p>Best in your Niche</p>
+                    {{--  --}}
+                    <p>Top-rated AI tools</p>
+                    <p>Testes and Trusted</p>
+                    <p>Quality selection</p>
+                    <p>Best in your Niche</p>
+                    {{--  --}}
+                    <p>Top-rated AI tools</p>
+                    <p>Testes and Trusted</p>
+                    <p>Quality selection</p>
+                    <p>Best in your Niche</p>
+                </div>
+
+            </div>
+            {{-- Infinite Inline Scroll Ends --}}
         </div>
     </section>
 
+    {{--  --}}
+    {{--  --}}
+    {{-- Lets have a look on our  platform : ai to tool kart  --}}
+    {{-- Path of this section:-  sections/category.blade.php --}}
+    {{--  --}}
+    {{--  --}}
     @if ($sections->secs != null)
         @foreach (json_decode($sections->secs) as $sec)
             @include($activeTemplate . 'sections.' . $sec)

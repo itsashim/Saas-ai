@@ -3744,8 +3744,12 @@ label {
     right: 0;
   }
 }
-
 /* category section css end */
+
+/* ABOUT SECTION -this section is inside category blade file START */
+
+/* ABOUT SECTION -this section is inside category blade file END */
+
 .coupon-item {
   border-radius: 8px;
   -webkit-border-radius: 8px;
@@ -4625,6 +4629,7 @@ div.dashboard-table-card .card-header {
   background-color: #0c0a20;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 .hero_wrap h1 {
   color: #efeef1;
@@ -4745,11 +4750,64 @@ div.dashboard-table-card .card-header {
 /* Types tabs Ends */
 
 /* Hero Decorations Start */
-
-/* Hero Decorations End */
 .decoration_wrap .star {
-  width: 3rem;
+  width: 2rem;
 }
+
+.decoration1 {
+  position: absolute;
+  left: 81%;
+  top: 18%;
+}
+.decoration2 {
+  position: absolute;
+  left: 17%;
+  top: 72%;
+}
+.decoration3 {
+  position: absolute;
+  width: 100%;
+  max-width: 250px;
+  transform: translate(3%, -48%);
+}
+/* Hero Decorations End */
+
+/* Infinite Scroll Starts */
+.infinite-scroll_wrap {
+  width: 100%;
+  border: 1px solid #555555;
+  margin-top: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.infinite-scroll {
+  gap: 3rem;
+  display: flex;
+  animation: infinite-scroll 30s linear infinite;
+  width: max-content;
+}
+@media (prefers-reduced-motion) {
+  .infinite-scroll_wrap {
+    display: none;
+  }
+}
+
+@keyframes infinite-scroll {
+  to {
+    transform: translate(calc(-49% - 1.5rem));
+  }
+}
+
+.infinite-scroll_wrap p {
+  text-wrap: nowrap;
+
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+/* Infinite Scroll Ends */
+
 /*Explore TAbs Section Start*/
 .explore_tabs {
   padding: 2rem 7%;
