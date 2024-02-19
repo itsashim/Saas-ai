@@ -3747,7 +3747,103 @@ label {
 /* category section css end */
 
 /* ABOUT SECTION -this section is inside category blade file START */
+.about_sec {
+  position: relative;
+  background-color: #0c0a20;
+  padding: 6rem 0;
+}
+.about_wrapper {
+  /* border: 1px solid white; */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+.about_sec .about_content .con {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem;
+  /* border: 1px solid red; */
+}
+
+.about_sec .about_wrapper h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1.7rem;
+}
+
+.about_card h6 {
+  font-size: 1.2rem;
+  color: white;
+}
+.about_card p {
+  color: #909090;
+  font-size: 0.8rem;
+  max-width: 30ch;
+}
+
+.about_bg {
+  background-image: linear-gradient(
+    90deg,
+    rgba(37, 144, 255, 1) 5%,
+    rgba(145, 12, 192, 1) 81%
+  );
+  padding: 18px;
+}
+
+.about_bg .wrap {
+  height: 100%;
+  background-color: #0c0a20;
+}
+.about_subcard figure {
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  margin-right: -1rem;
+  border: 1px solid white;
+  overflow: hidden;
+}
+.about_subcard figure img {
+  width: 100%;
+}
+.about_subcard .user_circle p {
+  margin-left: 1rem;
+}
+
+.about_footer {
+  background: linear-gradient(
+    rgba(37, 144, 255, 1) 5%,
+    rgba(145, 12, 192, 1) 81%
+  );
+  padding: 1px;
+  border-radius: 8px;
+}
+.about_footer .wrap {
+  background-color: #0c0a20;
+  border-radius: 8px;
+}
+.about_social-links {
+  padding: 1px;
+  background: linear-gradient(90deg, yellow 5%, rgba(145, 12, 192, 1) 81%);
+  border-radius: 100px;
+}
+.about_social-links .wrap {
+  padding: 3px;
+  border-radius: 100px;
+  background-color: #0c0a20;
+}
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.4rem;
+  height: 2rem;
+  border-radius: 100px;
+
+  background-color: #292929;
+}
 /* ABOUT SECTION -this section is inside category blade file END */
 
 .coupon-item {
@@ -4770,6 +4866,11 @@ div.dashboard-table-card .card-header {
   max-width: 250px;
   transform: translate(3%, -48%);
 }
+.decoration4 {
+  position: absolute;
+  top: 62%;
+  left: -3%;
+}
 /* Hero Decorations End */
 
 /* Infinite Scroll Starts */
@@ -4801,7 +4902,7 @@ div.dashboard-table-card .card-header {
 
 .infinite-scroll_wrap p {
   text-wrap: nowrap;
-
+  font-weight: 300;
   font-size: 1.3rem;
   margin: 0;
 }

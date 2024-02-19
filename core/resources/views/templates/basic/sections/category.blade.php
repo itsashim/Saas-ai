@@ -34,7 +34,134 @@
 {{-- ADDED SECTION  START --}}
 <section class="about_sec">
     <div class="about_wrapper">
+        <h2>Lets Have A Look on Our Platfrom: Ai Tool Kart</h2>
+        <div class="about_content row">
+            <div class="col-lg-6">
+                <div class="con gap-3">
+                    <div class="about_card">
+                        <h6>10 Millions + Total Views</h6>
+                        <p>"Welcome to our AI Tool Directory,
+                            your one-stop solution hub!
+                            With over 10 million views across multiple
+                            platforms and collaborations with popular
+                            influencers, we're your trusted destination
+                            for cutting-edge AI tools.
+                            Join us and revolutionize your workflow!"</p>
+                    </div>
+                    <div class="about_subcard bg-none">
+                        <p class="fs-3">foundry <span>private</span></p>
+                        <span>basementstudio/foundry</span>
+                        <p class="text-white"><span class="fw-medium">John Deo</span> is active</p>
+                        <div class="user_circle d-flex align-items-center">
+                            <figure>
+                                <img src="https://randomuser.me/api/portraits/men/26.jpg" alt="dummy user">
+                            </figure>
+                            <figure>
+                                <img src="https://randomuser.me/api/portraits/men/7.jpg" alt="dummy user">
+                            </figure>
+                            <figure>
+                                <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="dummy user">
+                            </figure>
+                        </div>
+                        <p>Repository created</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="con">
+                    <div class="about_card">
+                        <h6>Ai News And Ai Blogs</h6>
+                        <p>"As the proud owner of our AI Tool Directory,
+                            we're dedicated to bringing you the latest AI
+                            news and the most advanced tools available.
+                            With curated blogs offering insightful updates
+                            , we're committed to keeping you at the
+                            forefront of innovation.Join us on this journey of discovery and
+                            empowerment!"</p>
+                    </div>
+                    <div class="about_subcard about_bg">
+                        <div class="wrap p-4">
+                            <h2 class="mb-0">Blog</h2>
+                            <span>Top 10 Ai Tool in 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+        </div>
+        <div class="about_content row">
+            <div class="col-lg-4">
+                <div class="con">
+                    <div class="about_card">
+                        <p>"At our AI Tool Directory, we believe in quality over
+                            quantity. That's why we feature only the top 11 tools
+                            per niche. By carefully curating this selection, we ensure
+                            that you get access to the best-in-class solutions
+                            without overwhelming choices. Trust in our dedication
+                            to providing you with the most effective tools for your
+                            needs."</p>
+                        <figure>
+                            <img src="{{ asset('assets/images/icons/about-code.png') }}" alt="">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="con">
+                    <div class="about_card">
+                        <figure>
+                            <img src="{{ asset('assets/images/icons/basic-blocks.png') }}" alt="">
+                        </figure>
+                        <h6>Ai influencers With Us</h6>
+
+                        <p>Choose from a wide selection of blocks. Use primitive blocks-text, images, dates, etc or more
+                            complex ones collections, components and more.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="con">
+                    <div class="about_card">
+
+                        <figure>
+                            <img src="{{ asset('assets/images/icons/customer trust.png') }}" alt="">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about_footer ">
+            <div class="wrap d-flex flex-wrap py-2 px-4 justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-3">
+                    <h4 class="text-white">Join Our Community Today</h4>
+                    <img src="{{ asset('assets/images/icons/ai-favicon.png') }}" alt="">
+                </div>
+                <div class="about_social-links ">
+                    <div class="wrap d-flex gap-3">
+                        <div class="social-link">
+                            <img src="{{ asset('assets/images/icons/dribble.png') }}" alt="">
+                        </div>
+                        <div class="social-link">
+                            <img src="{{ asset('assets/images/icons/facebook.png') }}" alt="">
+                        </div>
+                        <div class="social-link">
+                            <img src="{{ asset('assets/images/icons/twitter.png') }}" alt="">
+                        </div>
+                        <div class="social-link">
+                            <img src="{{ asset('assets/images/icons/insta.png') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    {{-- animation  Start --}}
+    <div class="about_decoration">
+        <div class="decoration4">
+            <img src="{{ asset('assets/images/icons/blue-circle.png') }}" alt="">
+        </div>
+    </div>
+    {{-- animation End --}}
 </section>
 {{-- ADDED SECTION  END --}}
