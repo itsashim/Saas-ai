@@ -148,6 +148,12 @@
     {{-- Path of this section:-  sections/category.blade.php --}}
     {{--  --}}
     {{--  --}}
+    {{--  --}}
+    {{--  --}}
+    {{-- Trending Tools  --}}
+    {{-- Path of this section:-  sections/today_deals.blade.php --}}
+    {{--  --}}
+    {{--  --}}
     @if ($sections->secs != null)
         @foreach (json_decode($sections->secs) as $sec)
             @include($activeTemplate . 'sections.' . $sec)

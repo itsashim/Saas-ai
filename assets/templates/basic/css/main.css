@@ -3925,6 +3925,21 @@ label {
   left: -17px;
 }
 
+.price_free {
+  color: #999999;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.icons .icon {
+  font-size: 0.8rem;
+  padding: 0.6rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 150px;
+  background-color: #703bf7;
+}
+
 @media (max-width: 575px) {
   .today-deal-slider .slick-arrow.prev {
     left: 0;
@@ -4676,7 +4691,7 @@ div.dashboard-table-card .card-header {
 .ai_cards .card {
   border-radius: 10px;
   max-width: 16rem;
-  background-color: #1d1b30;
+  background-color: #0c0a20;
   object-fit: fill;
   overflow: hidden;
   padding: 1.4rem;
@@ -4685,6 +4700,8 @@ div.dashboard-table-card .card-header {
 }
 .ai_cards .card .img_wrap {
   width: 100%;
+  border-radius: 25px;
+  overflow: hidden;
 }
 .ai_cards .card .img_wrap img {
   aspect-ratio: 3/2;
@@ -4692,8 +4709,8 @@ div.dashboard-table-card .card-header {
 }
 
 .ai_cards h6 {
-  color: white;
-  font-weight: 700;
+  color: #999999;
+  font-weight: 400;
   font-size: 0.8rem;
 }
 
@@ -4701,11 +4718,12 @@ div.dashboard-table-card .card-header {
   margin: 1rem 0 0 0;
   font-size: 1rem;
   color: white;
-  font-weight: 800;
+  font-weight: 300;
 }
 .ai_cards .card p {
   color: white;
   font-weight: 600;
+  font-size: 0.8rem;
 }
 .ai_cards .card .icon {
   cursor: pointer;
@@ -4827,6 +4845,7 @@ div.dashboard-table-card .card-header {
   width: 100%;
   max-width: 870px;
   margin: 0 auto;
+  background-color: #0c0a20;
 }
 .tab_wrap {
   padding: 1px;
