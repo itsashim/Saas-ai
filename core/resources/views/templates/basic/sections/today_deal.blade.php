@@ -74,7 +74,7 @@
         {{--  --}}
     </div>
     {{-- Types Tab End. --}}
-    <h3 class="text-white sub_head text-center">{{ __($todayDeal->data_values->heading) }}</h3>
+    <h3 class="text-white sub_head text-center mt-5 fw-bold">{{ __($todayDeal->data_values->heading) }}</h3>
 
     <div class="today-deal-slider ai_cards">
         @foreach ($coupons as $coupon)
@@ -93,13 +93,14 @@
                                 </p> --}}
                     <div class="icons mt-2 d-flex justify-content-between align-items-center">
                         <div>
-                            <span class=" price_free">
-                                @if ($coupon->free_trail == 1)
-                                    Free Trail
-                                @else
-                                    price
-                                @endif
-                            </span>
+                            @if ($coupon->free_trail == 1)
+                                <span class=" price_free">
+                                    Free
+                                </span>
+                            @else
+                                <span></span>
+                            @endif
+                            <span class="price_txt">price</span>
                             <p class="card_price">${{ $coupon->price }}</p>
                         </div>
                         <div class="icon text-center text-white ">

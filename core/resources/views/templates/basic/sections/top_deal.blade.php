@@ -1,15 +1,13 @@
 @php
     $topDeal = getContent('top_deal.content', true);
     $coupons = \App\Models\Coupon::active()
-        ->where('top_deal', 1)
-        ->with('store')
-        ->withCount([
-            'reports' => function ($report) {
-                $report->where('action', 'copy')->where('date', 'like', now()->format('Y-m-d'));
-            },
-        ])
-        ->orderBy('featured_validity', 'DESC')
-        ->limit(8);
+    ->where('top_deal', 1)
+    ->with('store')
+    ->withCount(['reports' => function($report){
+        $report->where('action', 'copy')->where('date', 'like', now()->format('Y-m-d'));
+    }])
+    ->orderBy('featured_validity', 'DESC')
+    ->limit(8);
     $coupons->increment('impression');
     $coupons = $coupons->get();
     App\Http\Controllers\SiteController::saveCouponReport($coupons, 'impression');
@@ -50,7 +48,7 @@
                               <div>
                                   <p class="card_price">${{ $coupon->price }}</p>
                                   <span class="text-white">
-                                     @if ($coupon->free_trail == 1)
+                                     @if($coupon->free_trail == 1)
                                         Free Trail
                                     @else
                                         No Free Trail
@@ -81,606 +79,801 @@
         </div>
     </div>
 </section> --}}
+
+
+
+
+
+
+
+
 <!--Explore Tabs Start-->
-<div class="explore_tabs">
-    <h3 class="text-white sub_head text-center mb-3">Categories</h3>
-
-    <!--Tabs Categories Start-->
-    <ul class="nav nav-pills mb-3 explore_tabs_wrap d-flex gap-3 flex-wrap" id="pills-tab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <div class="tab d-inline-block nav-link active" id="pills-all-category-tab" data-bs-toggle="pill"
-                data-bs-target="#pills-all-category" type="button" role="tab" aria-controls="pills-all-category"
-                aria-selected="true">All categories</div>
-        </li>
-        <li class="nav-item" role="presentation">
-            <div class="tab d-inline-block nav-link" id="pills-analysis-tab" data-bs-toggle="pill"
-                data-bs-target="#pills-analysis" type="button" role="tab" aria-controls="pills-analysis"
-                aria-selected="false">AI Analysis</div>
-        </li>
-        <li class="nav-item" role="presentation">
-            <div class="tab d-inline-block nav-link" id="pills-detector-tab" data-bs-toggle="pill"
-                data-bs-target="#pills-detector" type="button" role="tab" aria-controls="pills-detector"
-                aria-selected="false">AI Detector</div>
-        </li>
-        <li class="nav-item" role="presentation">
-            <div class="tab d-inline-block nav-link" id="pills-finance-tab" data-bs-toggle="pill"
-                data-bs-target="#pills-finance" type="button" role="tab" aria-controls="pills-finance"
-                aria-selected="false">Finance</div>
-        </li>
-        <li class="nav-item" role="presentation">
-            <div class="tab d-inline-block nav-link" id="pills-seo-tab" data-bs-toggle="pill"
-                data-bs-target="#pills-seo" type="button" role="tab" aria-controls="pills-seo"
-                aria-selected="false">SEO</div>
-        </li>
-        <li class="nav-item" role="presentation">
-            <div class="tab d-inline-block nav-link" id="pills-video-tab" data-bs-toggle="pill"
-                data-bs-target="#pills-video" type="button" role="tab" aria-controls="pills-video"
-                aria-selected="false">Video</div>
-        </li>
-        <li class="nav-item" role="presentation">
-            <div class="tab d-inline-block nav-link" id="pills-writting-tab" data-bs-toggle="pill"
-                data-bs-target="#pills-writting" type="button" role="tab" aria-controls="pills-writting"
-                aria-selected="false">Writting</div>
-        </li>
-        <li class="nav-item" role="presentation">
-            <div class="tab d-inline-block nav-link" id="pills-business-tab" data-bs-toggle="pill"
-                data-bs-target="#pills-business" type="button" role="tab" aria-controls="pills-business"
-                aria-selected="false">Business</div>
-        </li>
-        <li class="nav-item" role="presentation">
-            <div class="tab d-inline-block nav-link" id="pills-prompts-tab" data-bs-toggle="pill"
-                data-bs-target="#pills-prompts" type="button" role="tab" aria-controls="pills-prompts"
-                aria-selected="false">Prompts</div>
-        </li>
-        <li class="nav-item" role="presentation">
-            <div class="tab d-inline-block nav-link" id="pills-email-tab" data-bs-toggle="pill"
-                data-bs-target="#pills-email" type="button" role="tab" aria-controls="pills-email"
-                aria-selected="false">Email Assistant</div>
-        </li>
-        <li class="nav-item" role="presentation">
-            <div class="tab d-inline-block nav-link" id="pills-copy-write-tab" data-bs-toggle="pill"
-                data-bs-target="#pills-copy-write" type="button" role="tab" aria-controls="pills-copy-write"
-                aria-selected="false">Copy writting</div>
-        </li>
-        <li class="nav-item" role="presentation">
-            <div class="tab d-inline-block nav-link" id="pills-social-media-tab" data-bs-toggle="pill"
-                data-bs-target="#pills-social-media" type="button" role="tab"
-                aria-controls="pills-social-media" aria-selected="false">Social media</div>
-        </li>
-    </ul>
-    <!--Tab categoires End -->
-
-
-    <!--Tab Content Start-->
-    <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-all-category" role="tabpanel"
-            aria-labelledby="pills-all-category-tab">
-            <div class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5">
-                <a href="{{ '/details' }}" class="card d-block ">
-                    <div class="img_wrap">
-                        <img src="{{ asset('core/public/images/card-img.png') }}" alt="Card Image" />
-                    </div>
-                    <h4>AI Forums</h4>
-                    <p class="">
-                        Lorem ipsum, dolor sit
-                    </p>
-                    <div class="icons mt-2 d-flex justify-content-between">
-                        <div>
-                            <p class="card_price">$150.00</p>
-                            <span class="text-white">((Free trial))</span>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
-                        </div>
-                    </div>
+    <div class="explore_tabs">
+        <h3 class="text-white sub_head text-center mb-3">Categories</h3>
+        
+        <!--Tabs Categories Start-->
+        <ul class="nav nav-pills mb-3 explore_tabs_wrap d-flex gap-3 flex-wrap" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <div class="tab d-inline-block nav-link active"  id="pills-all-category-tab" data-bs-toggle="pill" data-bs-target="#pills-all-category" type="button" role="tab" aria-controls="pills-all-category" aria-selected="true">All categories</div>
+            </li>
+            <li class="nav-item" role="presentation">
+              <div class="tab d-inline-block nav-link" id="pills-analysis-tab" data-bs-toggle="pill" data-bs-target="#pills-analysis" type="button" role="tab" aria-controls="pills-analysis" aria-selected="false">AI Analysis</div>
+            </li>
+            <li class="nav-item" role="presentation">
+              <div class="tab d-inline-block nav-link" id="pills-detector-tab" data-bs-toggle="pill" data-bs-target="#pills-detector" type="button" role="tab" aria-controls="pills-detector" aria-selected="false">AI Detector</div>
+            </li>
+            <li class="nav-item" role="presentation">
+              <div class="tab d-inline-block nav-link" id="pills-finance-tab" data-bs-toggle="pill" data-bs-target="#pills-finance" type="button" role="tab" aria-controls="pills-finance" aria-selected="false">Finance</div>
+            </li>
+            <li class="nav-item" role="presentation">
+              <div class="tab d-inline-block nav-link" id="pills-seo-tab" data-bs-toggle="pill" data-bs-target="#pills-seo" type="button" role="tab" aria-controls="pills-seo" aria-selected="false">SEO</div>
+            </li>
+            <li class="nav-item" role="presentation">
+              <div class="tab d-inline-block nav-link" id="pills-video-tab" data-bs-toggle="pill" data-bs-target="#pills-video" type="button" role="tab" aria-controls="pills-video" aria-selected="false">Video</div>
+            </li>          
+            <li class="nav-item" role="presentation">
+              <div class="tab d-inline-block nav-link" id="pills-writting-tab" data-bs-toggle="pill" data-bs-target="#pills-writting" type="button" role="tab" aria-controls="pills-writting" aria-selected="false">Writting</div>
+            </li>            
+            <li class="nav-item" role="presentation">
+              <div class="tab d-inline-block nav-link" id="pills-business-tab" data-bs-toggle="pill" data-bs-target="#pills-business" type="button" role="tab" aria-controls="pills-business" aria-selected="false">Business</div>
+            </li>    
+            <li class="nav-item" role="presentation">
+              <div class="tab d-inline-block nav-link" id="pills-prompts-tab" data-bs-toggle="pill" data-bs-target="#pills-prompts" type="button" role="tab" aria-controls="pills-prompts" aria-selected="false">Prompts</div>
+            </li>
+            <li class="nav-item" role="presentation">
+              <div class="tab d-inline-block nav-link" id="pills-email-tab" data-bs-toggle="pill" data-bs-target="#pills-email" type="button" role="tab" aria-controls="pills-email" aria-selected="false">Email Assistant</div>
+            </li>
+            <li class="nav-item" role="presentation">
+              <div class="tab d-inline-block nav-link" id="pills-copy-write-tab" data-bs-toggle="pill" data-bs-target="#pills-copy-write" type="button" role="tab" aria-controls="pills-copy-write" aria-selected="false">Copy writting</div>
+            </li>            
+            <li class="nav-item" role="presentation">
+              <div class="tab d-inline-block nav-link" id="pills-social-media-tab" data-bs-toggle="pill" data-bs-target="#pills-social-media" type="button" role="tab" aria-controls="pills-social-media" aria-selected="false">Social media</div>
+            </li>            
+        </ul>
+        <!--Tab categoires End -->
+        
+        
+        <!--Tab Content Start-->
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-all-category" role="tabpanel" aria-labelledby="pills-all-category-tab">
+                <div
+                class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5"
+                >
+                <a href="{{'/details'}}" class="card d-block ">
+                <div class="img_wrap">
+                <img src="{{asset('core/public/images/card-img.png')}}" alt="Card Image" />
+                </div>
+                <h4>AI Forums</h4>
+                <p class="">
+                Lorem ipsum, dolor sit 
+                </p>
+                <div class="icons mt-2 d-flex justify-content-between">
+                <div>
+                <p class="card_price">$150.00</p>
+                <span class="text-white">((Free trial))</span>
+                </div>
+                <div class="icon">
+                <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+                >
+                <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                />
+                </svg>
+                </div>
+                </div>
                 </a>
-                <a href="{{ '/details' }}" class="card d-block ">
-                    <div class="img_wrap">
-                        <img src="{{ asset('core/public/images/card-img.png') }}" alt="Card Image" />
-                    </div>
-                    <h4>AI Forums</h4>
-                    <p class="">
-                        Lorem ipsum, dolor sit
-                    </p>
-                    <div class="icons mt-2 d-flex justify-content-between">
-                        <div>
-                            <p class="card_price">$150.00</p>
-                            <span class="text-white">((Free trial))</span>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
-                        </div>
-                    </div>
-                </a>
+                <a href="{{'/details'}}" class="card d-block ">
+                <div class="img_wrap">
+                <img src="{{asset('core/public/images/card-img.png')}}" alt="Card Image" />
+                </div>
+                <h4>AI Forums</h4>
+                <p class="">
+                Lorem ipsum, dolor sit 
+                </p>
+                <div class="icons mt-2 d-flex justify-content-between">
+                <div>
+                <p class="card_price">$150.00</p>
+                <span class="text-white">((Free trial))</span>
+                </div>
+                <div class="icon">
+                <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+                >
+                <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                />
+                </svg>
+                </div>
+                </div>
+                </a>              
+                </div>
             </div>
-        </div>
-        <div class="tab-pane fade" id="pills-analysis" role="tabpanel" aria-labelledby="pills-analysis-tab">
-            <div class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5"
-                style="margin: 0 7%">
-                <a href="{{ '/details' }}" class="card d-block ">
-                    <div class="img_wrap">
-                        <img src="{{ asset('core/public/images/card-img.png') }}" alt="Card Image" />
-                    </div>
-                    <h4>AI Forums</h4>
-                    <p class="">
-                        Lorem ipsum, dolor sit
-                    </p>
-                    <div class="icons mt-2 d-flex justify-content-between">
+            <div class="tab-pane fade" id="pills-analysis" role="tabpanel" aria-labelledby="pills-analysis-tab">
+                    <div
+                    class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5" style="margin: 0 7%"
+                    >
+                        <a href="{{'/details'}}" class="card d-block ">
+                        <div class="img_wrap">
+                        <img src="{{asset('core/public/images/card-img.png')}}" alt="Card Image" />
+                        </div>
+                        <h4>AI Forums</h4>
+                        <p class="">
+                        Lorem ipsum, dolor sit 
+                        </p>
+                        <div class="icons mt-2 d-flex justify-content-between">
                         <div>
-                            <p class="card_price">$150.00</p>
-                            <span class="text-white">((Free trial))</span>
+                        <p class="card_price">$150.00</p>
+                        <span class="text-white">((Free trial))</span>
                         </div>
                         <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                        >
+                        <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                        />
+                        </svg>
                         </div>
-                    </div>
-                </a>
+                        </div>
+                        </a>              
+                    </div>                
             </div>
-        </div>
-        <div class="tab-pane fade" id="pills-detector" role="tabpanel" aria-labelledby="pills-detector-tab">
-            <div style="margin: 0 7%"
-                class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5">
-                <a href="{{ '/details' }}" class="card d-block ">
+            <div class="tab-pane fade" id="pills-detector" role="tabpanel" aria-labelledby="pills-detector-tab">
+                <div
+                style="margin: 0 7%"
+                class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5"
+                >
+                    <a href="{{'/details'}}" class="card d-block ">
+                            <div class="img_wrap">
+                            <img src="{{asset('core/public/images/card-img.png')}}" alt="Card Image" />
+                            </div>
+                        <h4>AI Forums</h4>
+                        <p class="">
+                        Lorem ipsum, dolor sit 
+                        </p>
+                        <div class="icons mt-2 d-flex justify-content-between">
+                            <div>
+                            <p class="card_price">$150.00</p>
+                            <span class="text-white">((Free trial))</span>
+                            </div>
+                            <div class="icon">
+                                <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                class="w-6 h-6"
+                                >
+                                <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                                />
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{{'/details'}}" class="card d-block ">
                     <div class="img_wrap">
-                        <img src="{{ asset('core/public/images/card-img.png') }}" alt="Card Image" />
+                    <img src="{{asset('core/public/images/card-img.png')}}" alt="Card Image" />
                     </div>
                     <h4>AI Forums</h4>
                     <p class="">
-                        Lorem ipsum, dolor sit
+                    Lorem ipsum, dolor sit 
                     </p>
                     <div class="icons mt-2 d-flex justify-content-between">
-                        <div>
-                            <p class="card_price">$150.00</p>
-                            <span class="text-white">((Free trial))</span>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
-                        </div>
+                    <div>
+                    <p class="card_price">$150.00</p>
+                    <span class="text-white">((Free trial))</span>
                     </div>
-                </a>
-                <a href="{{ '/details' }}" class="card d-block ">
-                    <div class="img_wrap">
-                        <img src="{{ asset('core/public/images/card-img.png') }}" alt="Card Image" />
+                    <div class="icon">
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                    >
+                    <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                    />
+                    </svg>
                     </div>
-                    <h4>AI Forums</h4>
-                    <p class="">
-                        Lorem ipsum, dolor sit
-                    </p>
-                    <div class="icons mt-2 d-flex justify-content-between">
-                        <div>
-                            <p class="card_price">$150.00</p>
-                            <span class="text-white">((Free trial))</span>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
-                        </div>
                     </div>
-                </a>
+                    </a>              
+                </div>                
             </div>
-        </div>
-        <div class="tab-pane fade" id="pills-finance" role="tabpanel" aria-labelledby="pills-finance-tab">
-            <div style="margin: 0 7%"
-                class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5">
-                <a href="{{ '/details' }}" class="card d-block ">
-                    <div class="img_wrap">
-                        <img src="{{ asset('core/public/images/card-img.png') }}" alt="Card Image" />
-                    </div>
-                    <h4>AI Forums</h4>
-                    <p class="">
-                        Lorem ipsum, dolor sit
-                    </p>
-                    <div class="icons mt-2 d-flex justify-content-between">
-                        <div>
-                            <p class="card_price">$150.00</p>
-                            <span class="text-white">((Free trial))</span>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
-                        </div>
-                    </div>
+            <div class="tab-pane fade" id="pills-finance" role="tabpanel" aria-labelledby="pills-finance-tab">
+                <div
+                style="margin: 0 7%"
+                class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5"
+                >
+                <a href="{{'/details'}}" class="card d-block ">
+                <div class="img_wrap">
+                <img src="{{asset('core/public/images/card-img.png')}}" alt="Card Image" />
+                </div>
+                <h4>AI Forums</h4>
+                <p class="">
+                Lorem ipsum, dolor sit 
+                </p>
+                <div class="icons mt-2 d-flex justify-content-between">
+                <div>
+                <p class="card_price">$150.00</p>
+                <span class="text-white">((Free trial))</span>
+                </div>
+                <div class="icon">
+                <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+                >
+                <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                />
+                </svg>
+                </div>
+                </div>
                 </a>
+                </div>                
             </div>
+            <div class="tab-pane fade" id="pills-seo" role="tabpanel" aria-labelledby="pills-seo-tab">
+                <div
+                style="margin: 0 7%"
+                class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5"
+                >
+                    <a href="{{'/details'}}" class="card d-block ">
+                        <div class="img_wrap">
+                        <img src="{{asset('core/public/images/card-img.png')}}" alt="Card Image" />
+                        </div>
+                        <h4>AI Forums</h4>
+                        <p class="">
+                        Lorem ipsum, dolor sit 
+                        </p>
+                        <div class="icons mt-2 d-flex justify-content-between">
+                        <div>
+                        <p class="card_price">$150.00</p>
+                        <span class="text-white">((Free trial))</span>
+                        </div>
+                        <div class="icon">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                        >
+                        <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                        />
+                        </svg>
+                        </div>
+                        </div>
+                    </a>
+                </div>                
+            </div>   
+            <div class="tab-pane fade" id="pills-video" role="tabpanel" aria-labelledby="pills-video-tab">
+                <div
+                style="margin: 0 7%"
+                class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5"
+                >
+                    <a href="{{'/details'}}" class="card d-block ">
+                        <div class="img_wrap">
+                        <img src="{{asset('core/public/images/card-img.png')}}" alt="Card Image" />
+                        </div>
+                        <h4>AI Forums</h4>
+                        <p class="">
+                        Lorem ipsum, dolor sit 
+                        </p>
+                        <div class="icons mt-2 d-flex justify-content-between">
+                        <div>
+                        <p class="card_price">$150.00</p>
+                        <span class="text-white">((Free trial))</span>
+                        </div>
+                        <div class="icon">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                        >
+                        <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                        />
+                        </svg>
+                        </div>
+                        </div>
+                    </a>
+                </div>                
+            </div>        
+            <div class="tab-pane fade" id="pills-writting" role="tabpanel" aria-labelledby="pills-writting-tab">
+                <div
+                style="margin: 0 7%"
+                class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5"
+                >
+                    <a href="{{'/details'}}" class="card d-block ">
+                        <div class="img_wrap">
+                        <img src="{{asset('core/public/images/card-img.png')}}" alt="Card Image" />
+                        </div>
+                        <h4>AI Forums</h4>
+                        <p class="">
+                        Lorem ipsum, dolor sit 
+                        </p>
+                        <div class="icons mt-2 d-flex justify-content-between">
+                        <div>
+                        <p class="card_price">$150.00</p>
+                        <span class="text-white">((Free trial))</span>
+                        </div>
+                        <div class="icon">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                        >
+                        <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                        />
+                        </svg>
+                        </div>
+                        </div>
+                    </a>
+                </div>                
+            </div> 
+            <div class="tab-pane fade" id="pills-business" role="tabpanel" aria-labelledby="pills-business-tab">
+                <div
+                style="margin: 0 7%"
+                class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5"
+                >
+                    <a href="{{'/details'}}" class="card d-block ">
+                        <div class="img_wrap">
+                        <img src="{{asset('core/public/images/card-img.png')}}" alt="Card Image" />
+                        </div>
+                        <h4>AI Forums</h4>
+                        <p class="">
+                        Lorem ipsum, dolor sit 
+                        </p>
+                        <div class="icons mt-2 d-flex justify-content-between">
+                        <div>
+                        <p class="card_price">$150.00</p>
+                        <span class="text-white">((Free trial))</span>
+                        </div>
+                        <div class="icon">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                        >
+                        <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                        />
+                        </svg>
+                        </div>
+                        </div>
+                    </a>
+                </div>                
+            </div> 
+            <div class="tab-pane fade" id="pills-prompts" role="tabpanel" aria-labelledby="pills-prompts-tab">
+                <div
+                style="margin: 0 7%"
+                class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5"
+                >
+                    <a href="{{'/details'}}" class="card d-block ">
+                        <div class="img_wrap">
+                        <img src="{{asset('core/public/images/card-img.png')}}" alt="Card Image" />
+                        </div>
+                        <h4>AI Forums</h4>
+                        <p class="">
+                        Lorem ipsum, dolor sit 
+                        </p>
+                        <div class="icons mt-2 d-flex justify-content-between">
+                        <div>
+                        <p class="card_price">$150.00</p>
+                        <span class="text-white">((Free trial))</span>
+                        </div>
+                        <div class="icon">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                        >
+                        <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                        />
+                        </svg>
+                        </div>
+                        </div>
+                    </a>
+                </div>                
+            </div> 
+            <div class="tab-pane fade" id="pills-email" role="tabpanel" aria-labelledby="pills-email-tab">
+                <div
+                style="margin: 0 7%"
+                class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5"
+                >
+                    <a href="{{'/details'}}" class="card d-block ">
+                        <div class="img_wrap">
+                        <img src="{{asset('core/public/images/card-img.png')}}" alt="Card Image" />
+                        </div>
+                        <h4>AI Forums</h4>
+                        <p class="">
+                        Lorem ipsum, dolor sit 
+                        </p>
+                        <div class="icons mt-2 d-flex justify-content-between">
+                        <div>
+                        <p class="card_price">$150.00</p>
+                        <span class="text-white">((Free trial))</span>
+                        </div>
+                        <div class="icon">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                        >
+                        <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                        />
+                        </svg>
+                        </div>
+                        </div>
+                    </a>
+                </div>                
+            </div> 
+            <div class="tab-pane fade" id="pills-copy-write" role="tabpanel" aria-labelledby="pills-copy-write-tab">
+                <div
+                style="margin: 0 7%"
+                class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5"
+                >
+                    <a href="{{'/details'}}" class="card d-block ">
+                        <div class="img_wrap">
+                        <img src="{{asset('core/public/images/card-img.png')}}" alt="Card Image" />
+                        </div>
+                        <h4>AI Forums</h4>
+                        <p class="">
+                        Lorem ipsum, dolor sit 
+                        </p>
+                        <div class="icons mt-2 d-flex justify-content-between">
+                        <div>
+                        <p class="card_price">$150.00</p>
+                        <span class="text-white">((Free trial))</span>
+                        </div>
+                        <div class="icon">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                        >
+                        <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                        />
+                        </svg>
+                        </div>
+                        </div>
+                    </a>
+                </div>                
+            </div> 
+            <div class="tab-pane fade" id="pills-social-media" role="tabpanel" aria-labelledby="pills-social-media-tab">
+                <div
+                style="margin: 0 7%"
+                class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5"
+                >
+                    <a href="{{'/details'}}" class="card d-block ">
+                        <div class="img_wrap">
+                        <img src="{{asset('core/public/images/card-img.png')}}" alt="Card Image" />
+                        </div>
+                        <h4>AI Forums</h4>
+                        <p class="">
+                        Lorem ipsum, dolor sit 
+                        </p>
+                        <div class="icons mt-2 d-flex justify-content-between">
+                        <div>
+                        <p class="card_price">$150.00</p>
+                        <span class="text-white">((Free trial))</span>
+                        </div>
+                        <div class="icon">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                        >
+                        <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                        />
+                        </svg>
+                        </div>
+                        </div>
+                    </a>
+                    <a href="{{'/details'}}" class="card d-block ">
+                        <div class="img_wrap">
+                        <img src="{{asset('core/public/images/card-img.png')}}" alt="Card Image" />
+                        </div>
+                        <h4>AI Forums</h4>
+                        <p class="">
+                        Lorem ipsum, dolor sit 
+                        </p>
+                        <div class="icons mt-2 d-flex justify-content-between">
+                        <div>
+                        <p class="card_price">$150.00</p>
+                        <span class="text-white">((Free trial))</span>
+                        </div>
+                        <div class="icon">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                        >
+                        <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                        />
+                        </svg>
+                        </div>
+                        </div>
+                    </a>   
+                    <a href="{{'/details'}}" class="card d-block ">
+                        <div class="img_wrap">
+                        <img src="{{asset('core/public/images/card-img.png')}}" alt="Card Image" />
+                        </div>
+                        <h4>AI Forums</h4>
+                        <p class="">
+                        Lorem ipsum, dolor sit 
+                        </p>
+                        <div class="icons mt-2 d-flex justify-content-between">
+                        <div>
+                        <p class="card_price">$150.00</p>
+                        <span class="text-white">((Free trial))</span>
+                        </div>
+                        <div class="icon">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                        >
+                        <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                        />
+                        </svg>
+                        </div>
+                        </div>
+                    </a>  
+                    <a href="{{'/details'}}" class="card d-block ">
+                        <div class="img_wrap">
+                        <img src="{{asset('core/public/images/card-img.png')}}" alt="Card Image" />
+                        </div>
+                        <h4>AI Forums</h4>
+                        <p class="">
+                        Lorem ipsum, dolor sit 
+                        </p>
+                        <div class="icons mt-2 d-flex justify-content-between">
+                        <div>
+                        <p class="card_price">$150.00</p>
+                        <span class="text-white">((Free trial))</span>
+                        </div>
+                        <div class="icon">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                        >
+                        <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                        />
+                        </svg>
+                        </div>
+                        </div>
+                    </a>  
+                    <a href="{{'/details'}}" class="card d-block ">
+                        <div class="img_wrap">
+                        <img src="{{asset('core/public/images/card-img.png')}}" alt="Card Image" />
+                        </div>
+                        <h4>AI Forums</h4>
+                        <p class="">
+                        Lorem ipsum, dolor sit 
+                        </p>
+                        <div class="icons mt-2 d-flex justify-content-between">
+                        <div>
+                        <p class="card_price">$150.00</p>
+                        <span class="text-white">((Free trial))</span>
+                        </div>
+                        <div class="icon">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                        >
+                        <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                        />
+                        </svg>
+                        </div>
+                        </div>
+                    </a>  
+                    <a href="{{'/details'}}" class="card d-block ">
+                        <div class="img_wrap">
+                        <img src="{{asset('core/public/images/card-img.png')}}" alt="Card Image" />
+                        </div>
+                        <h4>AI Forums</h4>
+                        <p class="">
+                        Lorem ipsum, dolor sit 
+                        </p>
+                        <div class="icons mt-2 d-flex justify-content-between">
+                        <div>
+                        <p class="card_price">$150.00</p>
+                        <span class="text-white">((Free trial))</span>
+                        </div>
+                        <div class="icon">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                        >
+                        <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                        />
+                        </svg>
+                        </div>
+                        </div>
+                    </a>  
+                    <a href="{{'/details'}}" class="card d-block ">
+                        <div class="img_wrap">
+                        <img src="{{asset('core/public/images/card-img.png')}}" alt="Card Image" />
+                        </div>
+                        <h4>AI Forums</h4>
+                        <p class="">
+                        Lorem ipsum, dolor sit 
+                        </p>
+                        <div class="icons mt-2 d-flex justify-content-between">
+                        <div>
+                        <p class="card_price">$150.00</p>
+                        <span class="text-white">((Free trial))</span>
+                        </div>
+                        <div class="icon">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                        >
+                        <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                        />
+                        </svg>
+                        </div>
+                        </div>
+                    </a>  
+                    <a href="{{'/details'}}" class="card d-block ">
+                        <div class="img_wrap">
+                        <img src="{{asset('core/public/images/card-img.png')}}" alt="Card Image" />
+                        </div>
+                        <h4>AI Forums</h4>
+                        <p class="">
+                        Lorem ipsum, dolor sit 
+                        </p>
+                        <div class="icons mt-2 d-flex justify-content-between">
+                        <div>
+                        <p class="card_price">$150.00</p>
+                        <span class="text-white">((Free trial))</span>
+                        </div>
+                        <div class="icon">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                        >
+                        <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                        />
+                        </svg>
+                        </div>
+                        </div>
+                    </a>  
+                </div>                
+            </div>             
         </div>
-        <div class="tab-pane fade" id="pills-seo" role="tabpanel" aria-labelledby="pills-seo-tab">
-            <div style="margin: 0 7%"
-                class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5">
-                <a href="{{ '/details' }}" class="card d-block ">
-                    <div class="img_wrap">
-                        <img src="{{ asset('core/public/images/card-img.png') }}" alt="Card Image" />
-                    </div>
-                    <h4>AI Forums</h4>
-                    <p class="">
-                        Lorem ipsum, dolor sit
-                    </p>
-                    <div class="icons mt-2 d-flex justify-content-between">
-                        <div>
-                            <p class="card_price">$150.00</p>
-                            <span class="text-white">((Free trial))</span>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="pills-video" role="tabpanel" aria-labelledby="pills-video-tab">
-            <div style="margin: 0 7%"
-                class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5">
-                <a href="{{ '/details' }}" class="card d-block ">
-                    <div class="img_wrap">
-                        <img src="{{ asset('core/public/images/card-img.png') }}" alt="Card Image" />
-                    </div>
-                    <h4>AI Forums</h4>
-                    <p class="">
-                        Lorem ipsum, dolor sit
-                    </p>
-                    <div class="icons mt-2 d-flex justify-content-between">
-                        <div>
-                            <p class="card_price">$150.00</p>
-                            <span class="text-white">((Free trial))</span>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="pills-writting" role="tabpanel" aria-labelledby="pills-writting-tab">
-            <div style="margin: 0 7%"
-                class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5">
-                <a href="{{ '/details' }}" class="card d-block ">
-                    <div class="img_wrap">
-                        <img src="{{ asset('core/public/images/card-img.png') }}" alt="Card Image" />
-                    </div>
-                    <h4>AI Forums</h4>
-                    <p class="">
-                        Lorem ipsum, dolor sit
-                    </p>
-                    <div class="icons mt-2 d-flex justify-content-between">
-                        <div>
-                            <p class="card_price">$150.00</p>
-                            <span class="text-white">((Free trial))</span>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="pills-business" role="tabpanel" aria-labelledby="pills-business-tab">
-            <div style="margin: 0 7%"
-                class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5">
-                <a href="{{ '/details' }}" class="card d-block ">
-                    <div class="img_wrap">
-                        <img src="{{ asset('core/public/images/card-img.png') }}" alt="Card Image" />
-                    </div>
-                    <h4>AI Forums</h4>
-                    <p class="">
-                        Lorem ipsum, dolor sit
-                    </p>
-                    <div class="icons mt-2 d-flex justify-content-between">
-                        <div>
-                            <p class="card_price">$150.00</p>
-                            <span class="text-white">((Free trial))</span>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="pills-prompts" role="tabpanel" aria-labelledby="pills-prompts-tab">
-            <div style="margin: 0 7%"
-                class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5">
-                <a href="{{ '/details' }}" class="card d-block ">
-                    <div class="img_wrap">
-                        <img src="{{ asset('core/public/images/card-img.png') }}" alt="Card Image" />
-                    </div>
-                    <h4>AI Forums</h4>
-                    <p class="">
-                        Lorem ipsum, dolor sit
-                    </p>
-                    <div class="icons mt-2 d-flex justify-content-between">
-                        <div>
-                            <p class="card_price">$150.00</p>
-                            <span class="text-white">((Free trial))</span>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="pills-email" role="tabpanel" aria-labelledby="pills-email-tab">
-            <div style="margin: 0 7%"
-                class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5">
-                <a href="{{ '/details' }}" class="card d-block ">
-                    <div class="img_wrap">
-                        <img src="{{ asset('core/public/images/card-img.png') }}" alt="Card Image" />
-                    </div>
-                    <h4>AI Forums</h4>
-                    <p class="">
-                        Lorem ipsum, dolor sit
-                    </p>
-                    <div class="icons mt-2 d-flex justify-content-between">
-                        <div>
-                            <p class="card_price">$150.00</p>
-                            <span class="text-white">((Free trial))</span>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="pills-copy-write" role="tabpanel" aria-labelledby="pills-copy-write-tab">
-            <div style="margin: 0 7%"
-                class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5">
-                <a href="{{ '/details' }}" class="card d-block ">
-                    <div class="img_wrap">
-                        <img src="{{ asset('core/public/images/card-img.png') }}" alt="Card Image" />
-                    </div>
-                    <h4>AI Forums</h4>
-                    <p class="">
-                        Lorem ipsum, dolor sit
-                    </p>
-                    <div class="icons mt-2 d-flex justify-content-between">
-                        <div>
-                            <p class="card_price">$150.00</p>
-                            <span class="text-white">((Free trial))</span>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="pills-social-media" role="tabpanel" aria-labelledby="pills-social-media-tab">
-            <div style="margin: 0 7%"
-                class="ai_cards d-flex flex-wrap gap-4 justify-content-center justify-content-sm-start mt-5">
-                <a href="{{ '/details' }}" class="card d-block ">
-                    <div class="img_wrap">
-                        <img src="{{ asset('core/public/images/card-img.png') }}" alt="Card Image" />
-                    </div>
-                    <h4>AI Forums</h4>
-                    <p class="">
-                        Lorem ipsum, dolor sit
-                    </p>
-                    <div class="icons mt-2 d-flex justify-content-between">
-                        <div>
-                            <p class="card_price">$150.00</p>
-                            <span class="text-white">((Free trial))</span>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-                <a href="{{ '/details' }}" class="card d-block ">
-                    <div class="img_wrap">
-                        <img src="{{ asset('core/public/images/card-img.png') }}" alt="Card Image" />
-                    </div>
-                    <h4>AI Forums</h4>
-                    <p class="">
-                        Lorem ipsum, dolor sit
-                    </p>
-                    <div class="icons mt-2 d-flex justify-content-between">
-                        <div>
-                            <p class="card_price">$150.00</p>
-                            <span class="text-white">((Free trial))</span>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-                <a href="{{ '/details' }}" class="card d-block ">
-                    <div class="img_wrap">
-                        <img src="{{ asset('core/public/images/card-img.png') }}" alt="Card Image" />
-                    </div>
-                    <h4>AI Forums</h4>
-                    <p class="">
-                        Lorem ipsum, dolor sit
-                    </p>
-                    <div class="icons mt-2 d-flex justify-content-between">
-                        <div>
-                            <p class="card_price">$150.00</p>
-                            <span class="text-white">((Free trial))</span>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-                <a href="{{ '/details' }}" class="card d-block ">
-                    <div class="img_wrap">
-                        <img src="{{ asset('core/public/images/card-img.png') }}" alt="Card Image" />
-                    </div>
-                    <h4>AI Forums</h4>
-                    <p class="">
-                        Lorem ipsum, dolor sit
-                    </p>
-                    <div class="icons mt-2 d-flex justify-content-between">
-                        <div>
-                            <p class="card_price">$150.00</p>
-                            <span class="text-white">((Free trial))</span>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-                <a href="{{ '/details' }}" class="card d-block ">
-                    <div class="img_wrap">
-                        <img src="{{ asset('core/public/images/card-img.png') }}" alt="Card Image" />
-                    </div>
-                    <h4>AI Forums</h4>
-                    <p class="">
-                        Lorem ipsum, dolor sit
-                    </p>
-                    <div class="icons mt-2 d-flex justify-content-between">
-                        <div>
-                            <p class="card_price">$150.00</p>
-                            <span class="text-white">((Free trial))</span>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-                <a href="{{ '/details' }}" class="card d-block ">
-                    <div class="img_wrap">
-                        <img src="{{ asset('core/public/images/card-img.png') }}" alt="Card Image" />
-                    </div>
-                    <h4>AI Forums</h4>
-                    <p class="">
-                        Lorem ipsum, dolor sit
-                    </p>
-                    <div class="icons mt-2 d-flex justify-content-between">
-                        <div>
-                            <p class="card_price">$150.00</p>
-                            <span class="text-white">((Free trial))</span>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-                <a href="{{ '/details' }}" class="card d-block ">
-                    <div class="img_wrap">
-                        <img src="{{ asset('core/public/images/card-img.png') }}" alt="Card Image" />
-                    </div>
-                    <h4>AI Forums</h4>
-                    <p class="">
-                        Lorem ipsum, dolor sit
-                    </p>
-                    <div class="icons mt-2 d-flex justify-content-between">
-                        <div>
-                            <p class="card_price">$150.00</p>
-                            <span class="text-white">((Free trial))</span>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-                <a href="{{ '/details' }}" class="card d-block ">
-                    <div class="img_wrap">
-                        <img src="{{ asset('core/public/images/card-img.png') }}" alt="Card Image" />
-                    </div>
-                    <h4>AI Forums</h4>
-                    <p class="">
-                        Lorem ipsum, dolor sit
-                    </p>
-                    <div class="icons mt-2 d-flex justify-content-between">
-                        <div>
-                            <p class="card_price">$150.00</p>
-                            <span class="text-white">((Free trial))</span>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
+        <!--Tab Content End-->
     </div>
-    <!--Tab Content End-->
-</div>
 <!--Explore Tabls Ends-->
 <!--Explore Start-->
-{{-- <section class="explore_sec p-5">
+   {{-- <section class="explore_sec p-5">
       <h3 class="mb-3">Explore</h3>
       <div class="explore_sec_wrap row">
         <div class="col-lg-3">
@@ -781,7 +974,7 @@
                 </div>
                 <h4>AI Forums</h4>
                 <p class="">
-                  Lorem ipsum, dolor sit
+                  Lorem ipsum, dolor sit 
                 </p>
                 <div class="icons mt-2 d-flex justify-content-between">
                   <div>
@@ -812,7 +1005,7 @@
                 </div>
                 <h4>AI Forums</h4>
                 <p class="">
-                  Lorem ipsum, dolor sit
+                  Lorem ipsum, dolor sit 
                 </p>
                 <div class="icons mt-2 d-flex justify-content-between">
                   <div>
@@ -836,7 +1029,7 @@
                     </svg>
                   </div>
                 </div>
-              </a>
+              </a>              
               </div>
             </div>
             <!-- All categories End -->
@@ -856,7 +1049,7 @@
                 </div>
                 <h4>AI Forums</h4>
                 <p class="">
-                  Lorem ipsum, dolor sit
+                  Lorem ipsum, dolor sit 
                 </p>
                 <div class="icons mt-2 d-flex justify-content-between">
                   <div>
@@ -887,7 +1080,7 @@
                 </div>
                 <h4>AI Forums</h4>
                 <p class="">
-                  Lorem ipsum, dolor sit
+                  Lorem ipsum, dolor sit 
                 </p>
                 <div class="icons mt-2 d-flex justify-content-between">
                   <div>
@@ -918,7 +1111,7 @@
                 </div>
                 <h4>AI Forums</h4>
                 <p class="">
-                  Lorem ipsum, dolor sit
+                  Lorem ipsum, dolor sit 
                 </p>
                 <div class="icons mt-2 d-flex justify-content-between">
                   <div>
@@ -942,7 +1135,7 @@
                     </svg>
                   </div>
                 </div>
-              </a>
+              </a>              
               </div>
             </div>
             <!-- AI detector End-->
@@ -955,65 +1148,75 @@
 
 
 <!--Ads Section Start-->
-<section class="ads_sec">
-    <div class="ads_wrap">
-        <img src="https://www.knowledgenile.com/wp-content/uploads/2019/10/Artificial-Intelligence-for-Advertisement-1.png"
-            alt="ads" width="100" />
-        <button class="ads_cross">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-            </svg>
+  <section class="ads_sec">
+      <div class="ads_wrap">
+          <img src="https://www.knowledgenile.com/wp-content/uploads/2019/10/Artificial-Intelligence-for-Advertisement-1.png" alt="ads" width="100"/>
+          <button class="ads_cross">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+             </svg>
         </button>
-    </div>
-</section>
+      </div>
+  </section>
 <!--Ads Section End-->
 
 
-<!-- Featured Tools Start -->
-<section class="featured ">
-    <h3 class="text-white sub_head">Featured Tools🏷️</h3>
-
-    <div class="today-deal-slider ai_cards">
-        @foreach ($coupons as $coupon)
-            <a href="{{ '/details' }}" class="single-slide card d-block">
-                <div class="img_wrap">
-                    <img src="{{ getImage(getFilePath('coupon') . '/' . $coupon->image, getFileSize('coupon')) }}"
-                        alt="image">
-                    @if ($coupon->featured_validity >= now())
-                        <span class="coupon-label">@lang('Featured')</span>
-                    @endif
-                </div>
-                <h4>{{ __($coupon->store) }}</h4>
-                <h6 class="text-white">{{ __($coupon->title) }}</h5>
-                    {{--    <p class="">
+        <!-- Featured Tools Start -->
+  <section class="featured ">
+        <h3 class="text-white sub_head">Featured Tools🏷️</h3>
+        
+        <div class="today-deal-slider ai_cards">
+            @foreach ($coupons as $coupon)
+ 
+                            
+                    <a href="{{'/details'}}" class="single-slide card d-block">
+                            <div class="img_wrap">
+                                <img src="{{ getImage(getFilePath('coupon') . '/' . $coupon->image, getFileSize('coupon')) }}"
+                                    alt="image">
+                                @if ($coupon->featured_validity >= now())
+                                    <span class="coupon-label">@lang('Featured')</span>
+                                @endif
+                            </div>
+                            <h4>{{ __($coupon->store) }}</h4>
+                            <h6 class="text-white">{{ __($coupon->title) }}</h5>
+                        {{--    <p class="">
                              {{ $coupon->reports_count }} @lang('used today')
                                 </p> --}}
-                    <div class="icons mt-2 d-flex justify-content-between">
-                        <div>
-                            <p class="card_price">${{ $coupon->price }}</p>
-                            <span class="text-white">
-                                @if ($coupon->free_trail == 1)
-                                    Free Trail
-                                @else
-                                    No Free Trail
-                                @endif
-                            </span>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                            </svg>
-                        </div>
-                    </div>
-            </a>
-        @endforeach
-    </div>
+                            <div class="icons mt-2 d-flex justify-content-between">
+                              <div>
+                                  <p class="card_price">${{ $coupon->price }}</p>
+                                  <span class="text-white">
+                                     @if($coupon->free_trail == 1)
+                                        Free Trail
+                                    @else
+                                        No Free Trail
+                                    @endif
+                                  </span>
+                              </div>
+                              <div class="icon">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="1.5"
+                                  stroke="currentColor"
+                                  class="w-6 h-6"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                                  />
+                                </svg>
+                              </div>
+                            </div>
+                    </a>
+            @endforeach
+        </div>
 
 
-    <a href="{{ route('coupon.filter.type', 'today-deal') }}"
-        class="btn text-white  btn-md flex-shrink-0 mx-auto d-block viewall_btn">@lang('View All')</a>
-</section>
-<!--Featured Tools End  -->
+        <a href="{{ route('coupon.filter.type', 'today-deal') }}" class="btn text-white  btn-md flex-shrink-0 mx-auto d-block viewall_btn" >@lang('View All')</a>
+    </section> 
+        <!--Featured Tools End  -->
+
+

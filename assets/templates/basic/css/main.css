@@ -362,7 +362,7 @@ hr {
 }
 
 .section-title {
-  font-size: 2.25rem;
+  font-size: 4.25rem;
 }
 
 @media (max-width: 767px) {
@@ -830,7 +830,10 @@ body::-webkit-scrollbar-thumb,
 }
 
 .read-more-btn {
-  color: white;
+  color: #b69efb !important;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .blog-item__thumb img,
@@ -954,7 +957,17 @@ body::-webkit-scrollbar-thumb,
 
 .category-item,
 .testimonial-item {
-  text-align: center;
+  /* text-align: center; */
+}
+
+.testimonial-item_wrap {
+  padding: 1px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(37, 144, 255, 1) 5%,
+    rgba(145, 12, 192, 1) 81%
+  ) !important;
+  border-radius: 8px;
 }
 
 .custom--accordion .accordion-button::before,
@@ -3517,6 +3530,7 @@ label {
 /* footer sectioncss start */
 .footer-section {
   margin-top: auto;
+  background-color: #0c0a20;
 }
 
 /* .footer-section::before {
@@ -3533,6 +3547,61 @@ label {
   padding: 0.9375rem 0;
 }
 
+.newsletter_wrap {
+  background-image: linear-gradient(
+    90deg,
+    rgba(37, 144, 255, 1) 5%,
+    rgba(145, 12, 192, 1) 81%
+  ) !important;
+  padding: 1px;
+  border-radius: 100px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.newsletter_wrap .newsletter {
+  border-radius: 100px;
+  background-color: #0c0a20;
+  padding: 5px;
+}
+
+.news-letter {
+  background-color: #0c0a20;
+  padding: 4rem 0;
+}
+.news-letter h2 {
+  font-size: 2.4rem;
+}
+
+.newsletter_wrap .newsletter input {
+  width: 100%;
+  background-color: #0c0a20;
+  border-radius: 100px;
+  border: none;
+  padding-left: 1rem;
+  color: white;
+}
+
+.newsletter_wrap .newsletter input::placeholder {
+  color: white;
+}
+.news-letter .newsletter button {
+  color: white;
+  background-image: linear-gradient(
+    90deg,
+    rgba(37, 144, 255, 1) 5%,
+    rgba(145, 12, 192, 1) 81%
+  ) !important;
+  border-radius: 100px;
+  padding: 0.5rem 1rem;
+  min-width: 150px;
+}
+
+.news-letter .footer_text {
+  font-size: 1rem;
+  max-width: 80ch;
+  margin: 0 auto;
+}
+
 .footer-logo img {
   max-height: 40px;
   max-width: 250px;
@@ -3544,6 +3613,30 @@ label {
 
 .footer-inline-link li a:hover {
   color: #e2d784 !important;
+}
+
+.footer_bottom-submit {
+  color: white;
+  background-image: linear-gradient(
+    90deg,
+    rgba(37, 144, 255, 1) 5%,
+    rgba(145, 12, 192, 1) 81%
+  ) !important;
+  border-radius: 100px;
+  padding: 0.5rem 1rem;
+  min-width: 150px;
+}
+
+.footer_links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.footer_links a {
+  color: white;
+  line-height: 1.6;
 }
 
 /* footer sectioncss end */
@@ -3757,6 +3850,8 @@ label {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .about_sec .about_content .con {
@@ -3926,6 +4021,18 @@ label {
 }
 
 .price_free {
+  background-color: #05ff00;
+  border-radius: 100px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #292929;
+  position: absolute;
+  top: 0;
+  rotate: -45deg;
+  transform: translate(-25px, -35px);
+  padding: 0.1rem 0.6rem;
+}
+.price_txt {
   color: #999999;
   font-weight: 400;
   font-size: 0.8rem;
@@ -4103,7 +4210,7 @@ label {
 }
 
 .testimonial-item__details {
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 
 @media (max-width: 575px) {
@@ -4125,7 +4232,13 @@ label {
 }
 
 .testimonial-item span {
-  color: #e6e6e6;
+  color: #999999;
+  font-size: 0.9rem;
+}
+
+.testimonial_title {
+  color: white;
+  margin-bottom: 3rem;
 }
 
 .testimonial-slider .slick-list {
@@ -4134,6 +4247,9 @@ label {
 
 .testimonial-slider .single-slide {
   padding: 0 0.9375rem;
+}
+
+.testimonial-slider h2 {
 }
 
 .counter-item__amount {
@@ -4149,18 +4265,31 @@ label {
 
 /* testimonial section css end */
 /* blog section css start */
-.blog-item__thumb {
+.blog_para {
+  font-size: 0.8rem;
+  font-size: 1.7;
+}
+.blog-item__thumb.blog_main {
   height: 275px;
+}
+.blog-item__thumb img {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.blog-item__thumb.blog_main img {
+  border-radius: 0;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
 }
 
 .blog-item__content {
   padding: 1.5625rem;
-  background-color: #1d1b30;
+  background-color: #1e1e1e;
   color: white;
 }
 
 .blog-item .title {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   margin-bottom: 0.9375rem;
 }
 
@@ -4171,6 +4300,18 @@ label {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.blog_date {
+  color: #b6b6b6;
+  font-size: 0.7rem;
+}
+
+.blog_tags .tag {
+  background-color: #737373;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.7rem;
+  border-radius: 100px;
+  margin-bottom: 0.8rem;
 }
 
 /* blog section css end */
@@ -4693,7 +4834,7 @@ div.dashboard-table-card .card-header {
   max-width: 16rem;
   background-color: #0c0a20;
   object-fit: fill;
-  overflow: hidden;
+  /* overflow: hidden; */
   padding: 1.4rem;
   text-decoration: none;
   margin-inline: 1rem;
@@ -4715,10 +4856,10 @@ div.dashboard-table-card .card-header {
 }
 
 .ai_cards .card h4 {
-  margin: 1rem 0 0 0;
+  margin: 1.4rem 0 0 0;
   font-size: 1rem;
   color: white;
-  font-weight: 300;
+  font-weight: 600;
 }
 .ai_cards .card p {
   color: white;
@@ -4727,6 +4868,9 @@ div.dashboard-table-card .card-header {
 }
 .ai_cards .card .icon {
   cursor: pointer;
+}
+.icons .icon:hover {
+  background-color: #a331ff;
 }
 .ai_cards .card .icon svg {
   width: 2rem;
@@ -4889,6 +5033,16 @@ div.dashboard-table-card .card-header {
   position: absolute;
   top: 62%;
   left: -3%;
+  z-index: 1;
+}
+.decoration5 {
+  position: absolute;
+  top: 34%;
+  right: 5%;
+}
+.decoration6 {
+  position: absolute;
+  top: 0;
 }
 /* Hero Decorations End */
 
@@ -5007,11 +5161,10 @@ div.dashboard-table-card .card-header {
 }
 
 .featured .btn {
-  background-color: #645bf9;
   border-radius: 100px;
-  color: #b8b6cf;
   width: 10rem;
   margin-top: 4.7rem;
+  border: none;
 }
 .featured .btn:hover {
   color: white !important;
@@ -5027,11 +5180,15 @@ div.dashboard-table-card .card-header {
 }
 
 .blog_sec .btn {
-  background-color: #302f41;
+  background-image: linear-gradient(
+    90deg,
+    rgba(37, 144, 255, 1) 5%,
+    rgba(145, 12, 192, 1) 81%
+  ) !important;
   border-radius: 100px;
-  color: #b8b6cf;
   width: 10rem;
-  margin-top: 1.7rem;
+  margin-top: 2.7rem;
+  border: none;
 }
 .blog_sec .btn:hover {
   color: white !important;
@@ -5192,7 +5349,11 @@ div.dashboard-table-card .card-header {
 }
 
 .viewall_btn {
-  background-color: #302f41 !important;
+  background-image: linear-gradient(
+    90deg,
+    rgba(37, 144, 255, 1) 5%,
+    rgba(145, 12, 192, 1) 81%
+  ) !important;
 }
 
 /**/
