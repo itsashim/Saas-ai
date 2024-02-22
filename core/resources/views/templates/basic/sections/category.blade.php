@@ -1,4 +1,8 @@
 {{-- ORIGINAL CATEGORY SECTION OF WEBSITE START --}}
+@php
+    $category = getContent('category.content', true);
+    $categories = \App\Models\Category::where('status', 1)->latest()->get();
+@endphp
 {{-- @php
     $category = getContent('category.content', true);
     $categories = \App\Models\Category::where('status', 1)->latest()->get();
@@ -16,7 +20,8 @@
                     @foreach ($categories as $category)
                         <div class="single-slide">
                             <div class="category-item has--link">
-                                <a href="{{ route('coupon.filter.type', ['category', $category->id]) }}" class="item--link"></a>
+                                <a href="{{ route('coupon.filter.type', ['category', $category->id]) }}"
+                                    class="item--link"></a>
                                 @php echo $category->icon @endphp
                                 <p class="caption">{{ __($category->name) }}</p>
                             </div>
@@ -49,21 +54,25 @@
                             Join us and revolutionize your workflow!"</p>
                     </div>
                     <div class="about_subcard bg-none">
-                        <p class="fs-3">foundry <span>private</span></p>
-                        <span>basementstudio/foundry</span>
-                        <p class="text-white"><span class="fw-medium">John Deo</span> is active</p>
-                        <div class="user_circle d-flex align-items-center">
-                            <figure>
-                                <img src="https://randomuser.me/api/portraits/men/26.jpg" alt="dummy user">
-                            </figure>
-                            <figure>
-                                <img src="https://randomuser.me/api/portraits/men/7.jpg" alt="dummy user">
-                            </figure>
-                            <figure>
-                                <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="dummy user">
-                            </figure>
-                        </div>
-                        <p>Repository created</p>
+
+                        <img src="{{ asset('assets/images/icons/foundry.png') }}" alt="">
+                        {{-- <div>
+                            <p class="fs-3">foundry <span>private</span></p>
+                            <span>basementstudio/foundry</span>
+                            <p class="text-white"><span class="fw-medium">John Deo</span> is active</p>
+                            <div class="user_circle d-flex align-items-center">
+                                <figure>
+                                    <img src="https://randomuser.me/api/portraits/men/26.jpg" alt="dummy user">
+                                </figure>
+                                <figure>
+                                    <img src="https://randomuser.me/api/portraits/men/7.jpg" alt="dummy user">
+                                </figure>
+                                <figure>
+                                    <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="dummy user">
+                                </figure>
+                            </div>
+                            <p>Repository created</p>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -132,7 +141,8 @@
             </div>
         </div>
         <div class="about_footer ">
-            <div class="wrap d-flex flex-wrap py-2 px-4 justify-content-between align-items-center">
+            <div
+                class="wrap d-flex flex-wrap py-2 px-4 justify-content-center justify-content-sm-between align-items-center">
                 <div class="d-flex align-items-center gap-3">
                     <h4 class="text-white">Join Our Community Today</h4>
                     <img src="{{ asset('assets/images/icons/ai-favicon.png') }}" alt="">
@@ -161,7 +171,32 @@
         <div class="decoration4">
             <img src="{{ asset('assets/images/icons/blue-circle.png') }}" alt="">
         </div>
+        <div class="decoration7 d-none d-md-block">
+            <img src="{{ asset('assets/images/icons/decoration7.png') }}" alt="">
+        </div>
     </div>
     {{-- animation End --}}
+    <div class="hr_line" style="margin-top: 7rem"></div>
+
+
+    {{-- Categories Section Start --}}
+    <div class="footer-logo mt-5">
+        <img class="d-block mx-auto" src="{{ asset('assets/images/logoIcon/logo_2.png') }}" alt="">
+    </div>
+    <h3 class="text-white sub_head text-center  fw-bold">Categories</h3>
+
+    {{-- Types Tab Start --}}
+    <div class="types_tab d-flex gap-2 flex-wrap justify-content-center pb-5">
+        {{--  --}}
+        @foreach ($categories as $category)
+            {{-- @php echo $category->icon @endphp --}}
+
+            <a href="{{ route('coupon.filter.type', ['category', $category->id]) }}" class="tab_wrap">
+                <span class="tab">{{ __($category->name) }}</span>
+            </a>
+        @endforeach
+    </div>
+    {{-- Types Tab End. --}}
+    {{-- Categories Section End  --}}
 </section>
 {{-- ADDED SECTION  END --}}

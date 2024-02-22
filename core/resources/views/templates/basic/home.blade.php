@@ -4,7 +4,10 @@
     @php
         $banner = getContent('banner.content', true);
         $banners = getContent('banner.element', false, null, true);
+        $category = getContent('category.content', true);
+        $categories = \App\Models\Category::where('status', 1)->latest()->get();
     @endphp
+
 
     {{--  <section class="hero-section bg_img" style="background: url({{ getImage('assets/images/frontend/banner/'.$banner->data_values->background_image, '1920x1080') }}) center;">
         <div class="container">
@@ -39,58 +42,17 @@
                     </button>
                 </div>
             </div>
+
             {{-- Types Tab Start --}}
-            <div class="types_tab d-flex gap-2 flex-wrap justify-content-center">
+            <div class="types_tab d-flex gap-2 flex-wrap justify-content-center pb-5">
                 {{--  --}}
-                <span class="tab_wrap">
-                    <span class="tab">Email Marketing</span>
-                </span>
-                {{--  --}}
-                {{--  --}}
-                <span class="tab_wrap">
-                    <span class="tab">Writtig</span>
-                </span>
-                {{--  --}}
-                {{--  --}}
-                <span class="tab_wrap">
-                    <span class="tab">Real State</span>
-                </span>
-                {{--  --}}
-                {{--  --}}
-                <span class="tab_wrap">
-                    <span class="tab">Website</span>
-                </span>
-                {{--  --}}
-                {{--  --}}
-                <span class="tab_wrap">
-                    <span class="tab">Music</span>
-                </span>
-                {{--  --}}
-                {{--  --}}
-                <span class="tab_wrap">
-                    <span class="tab">Trading Bots</span>
-                </span>
-                {{--  --}}
-                {{--  --}}
-                <span class="tab_wrap">
-                    <span class="tab">Interior Designer</span>
-                </span>
-                {{--  --}}
-                {{--  --}}
-                <span class="tab_wrap">
-                    <span class="tab">Digital Marketing</span>
-                </span>
-                {{--  --}}
-                {{--  --}}
-                <span class="tab_wrap">
-                    <span class="tab">Prompt</span>
-                </span>
-                {{--  --}}
-                {{--  --}}
-                <span class="tab_wrap">
-                    <span class="tab">Social Media</span>
-                </span>
-                {{--  --}}
+                @foreach ($categories as $category)
+                    {{-- @php echo $category->icon @endphp --}}
+
+                    <a href="{{ route('coupon.filter.type', ['category', $category->id]) }}" class="tab_wrap">
+                        <span class="tab">{{ __($category->name) }}</span>
+                    </a>
+                @endforeach
             </div>
             {{-- Types Tab End. --}}
             <div class="d-flex flex-wrap gap-3 justify-content-center">
@@ -116,44 +78,39 @@
                 </div>
                 {{-- Infinite section decoration Ends  --}}
 
+                {{-- Border decoration start --}}
+                <div class="decoration8 d-none d-xl-block">
+                    <img src="{{ asset('assets/images/icons/hero-border.png') }}" alt="">
+                </div>
+                {{-- Border decoration End --}}
+
             </div>
             {{-- Decorations End --}}
-            {{-- Infinite Inline Scroll Starts --}}
-            <div class="infinite-scroll_wrap">
-                <div class="infinite-scroll  py-3">
-                    <p>Top-rated AI tools</p>
-                    <p>Testes and Trusted</p>
-                    <p>Quality selection</p>
-                    <p>Best in your Niche</p>
-                    {{--  --}}
-                    <p>Top-rated AI tools</p>
-                    <p>Testes and Trusted</p>
-                    <p>Quality selection</p>
-                    <p>Best in your Niche</p>
-                    {{--  --}}
-                    <p>Top-rated AI tools</p>
-                    <p>Testes and Trusted</p>
-                    <p>Quality selection</p>
-                    <p>Best in your Niche</p>
-                </div>
 
-            </div>
-            {{-- Infinite Inline Scroll Ends --}}
         </div>
+        {{-- Infinite Inline Scroll Starts --}}
+        <div class="infinite-scroll_wrap">
+            <div class="infinite-scroll  py-3">
+                <p>Top-rated AI tools</p>
+                <p>Testes and Trusted</p>
+                <p>Quality selection</p>
+                <p>Best in your Niche</p>
+                {{--  --}}
+                <p>Top-rated AI tools</p>
+                <p>Testes and Trusted</p>
+                <p>Quality selection</p>
+                <p>Best in your Niche</p>
+                {{--  --}}
+                <p>Top-rated AI tools</p>
+                <p>Testes and Trusted</p>
+                <p>Quality selection</p>
+                <p>Best in your Niche</p>
+            </div>
+
+        </div>
+        {{-- Infinite Inline Scroll Ends --}}
     </section>
 
-    {{--  --}}
-    {{--  --}}
-    {{-- Lets have a look on our  platform : ai to tool kart  --}}
-    {{-- Path of this section:-  sections/category.blade.php --}}
-    {{--  --}}
-    {{--  --}}
-    {{--  --}}
-    {{--  --}}
-    {{-- Trending Tools  --}}
-    {{-- Path of this section:-  sections/today_deals.blade.php --}}
-    {{--  --}}
-    {{--  --}}
     @if ($sections->secs != null)
         @foreach (json_decode($sections->secs) as $sec)
             @include($activeTemplate . 'sections.' . $sec)

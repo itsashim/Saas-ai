@@ -6,11 +6,13 @@
 
 @endphp
 
+<div class="hr_line"></div>
+
 <section class="pt-80 pb-80 blog_sec">
 
     <div class="mx-auto" style="max-width: 1000px">
-        <div class="row">
-            <div class="col-lg-5 pe-3">
+        <div class="row " style="width: 100%">
+            <div class="col-lg-5 pe-0 pe-3-sm">
                 <div class="section-header">
 
                     <h2 class="section-title text-white mb-4">{{ __($blog->data_values->heading) }}</h2>
@@ -64,14 +66,14 @@
 
                             <div class="blog-item row">
 
-                                <div class="blog-item__thumb col-6">
+                                <div class="blog-item__thumb col-md-6">
 
                                     <img src="{{ getImage('assets/images/frontend/blog/thumb_' . $blog->data_values->blog_image, '425x425') }}"
                                         alt="image">
 
                                 </div>
 
-                                <div class="blog-item__content col-6">
+                                <div class="blog-item__content col-md-6">
 
 
 
