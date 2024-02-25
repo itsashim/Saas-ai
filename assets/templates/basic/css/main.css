@@ -758,7 +758,7 @@ body::-webkit-scrollbar-thumb,
 }
 
 .contact-info-wrapper {
-  background: #1d1b30;
+  background: #161616;
   color: white;
 }
 
@@ -2388,7 +2388,7 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: #212121;
+  /* -webkit-text-fill-color: #212121; */
   transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -2489,7 +2489,6 @@ textarea {
 }
 
 label {
-  color: #212121;
   margin-bottom: 8px;
   font-size: 15px;
   font-weight: 500;
@@ -3892,6 +3891,9 @@ label {
   border-radius: 13px;
   margin-top: 1rem;
 }
+.about_sec .about_content .con figure img {
+  border-radius: 14px;
+}
 
 .about_sec .about_wrapper h2 {
   color: white;
@@ -4549,7 +4551,7 @@ label {
 .contact-right-area {
   color: white;
   padding: 3.125rem;
-  background-color: #1d1b30;
+  background-color: #161616;
 }
 
 @media (max-width: 575px) {
@@ -4985,7 +4987,10 @@ div.dashboard-table-card .card-header {
   /* background: linear-gradient(90deg, #bfcdf7, #c1b4f5); */
 }
 .hero_wrap .hero_btn {
-  background-color: #645bf9;
+  background-image: linear-gradient(
+    rgba(37, 144, 255, 1) 5%,
+    rgba(145, 12, 192, 1) 81%
+  );
   color: #fff;
   font-weight: 400;
   border-radius: 100px;
@@ -5291,7 +5296,11 @@ div.dashboard-table-card .card-header {
 }
 
 .contact_sec .btn {
-  background-color: #645bf9;
+  background-image: linear-gradient(
+    90deg,
+    rgba(37, 144, 255, 1) 5%,
+    rgba(145, 12, 192, 1) 81%
+  ) !important;
   border-radius: 100px;
   color: #b8b6cf;
   width: 10rem;
@@ -5348,7 +5357,7 @@ div.dashboard-table-card .card-header {
 }
 
 .form_wrap {
-  background-color: #18162b;
+  background-color: #161616;
   width: min(100% - 3rem, 700px);
   padding: 4rem;
   margin: 0 auto;
@@ -5371,7 +5380,7 @@ div.dashboard-table-card .card-header {
 
 .form_wrap label {
   display: block;
-  color: white;
+  color: white !important;
   font-size: 1.3rem;
   font-weight: 600;
   margin-top: 1.5rem;
@@ -5379,20 +5388,24 @@ div.dashboard-table-card .card-header {
 }
 
 .login_form input {
-  color: white;
+  color: white !important;
   background-color: #29273b;
   padding: 1.3rem 1rem;
   border: none;
   border-radius: 10px;
   width: 100%;
+  font-size: 1.1rem;
 }
 .login_form input::placeholder {
-  color: #7b7677;
-  font-size: 1.3rem;
+  color: white;
+  font-size: 1.1rem;
 }
 
 .form .hero_btn {
-  background-color: #645bf9;
+  background-image: linear-gradient(
+    rgba(37, 144, 255, 1) 5%,
+    rgba(145, 12, 192, 1) 81%
+  );
   color: #fff;
   font-size: 1.4rem;
   font-weight: 600;
@@ -5420,9 +5433,6 @@ div.dashboard-table-card .card-header {
 
   .form .hero_btn {
     font-size: 1.1rem;
-  }
-
-  .login_form input::placeholder {
   }
 
   .form {

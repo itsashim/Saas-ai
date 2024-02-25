@@ -101,41 +101,59 @@
         <div class="about_content row">
             <div class="col-lg-4">
                 <div class="con">
-                    <div class="about_card">
-                        <p>"At our AI Tool Directory, we believe in quality over
-                            quantity. That's why we feature only the top 11 tools
-                            per niche. By carefully curating this selection, we ensure
-                            that you get access to the best-in-class solutions
-                            without overwhelming choices. Trust in our dedication
-                            to providing you with the most effective tools for your
-                            needs."</p>
-                        <figure>
-                            <img src="{{ asset('assets/images/icons/about-code.png') }}" alt="">
-                        </figure>
+                    <div class="about_card row">
+                        <div class="col-12 col-sm-6  col-lg-12">
+                            <h6> Only 11 Tools Per Niche</h6>
+                            <p>"At our AI Tool Directory, we believe in quality over
+                                quantity. That's why we feature only the top 11 tools
+                                per niche. By carefully curating this selection, we ensure
+                                that you get access to the best-in-class solutions
+                                without overwhelming choices. Trust in our dedication
+                                to providing you with the most effective tools for your
+                                needs."</p>
+                        </div>
+                        <div class="col-12 col-sm-6  col-lg-12">
+                            <figure>
+                                <img src="{{ asset('assets/images/icons/top-11.jpeg') }}" alt="">
+                            </figure>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="con">
-                    <div class="about_card">
-                        <figure>
-                            <img src="{{ asset('assets/images/icons/basic-blocks.png') }}" alt="">
-                        </figure>
-                        <h6>Ai influencers With Us</h6>
+                    <div class="about_card row">
+                        <div class="col-12 col-sm-6  col-lg-12">
+                            <figure>
+                                <img src="{{ asset('assets/images/icons/ai-influencer.jpeg') }}" alt="">
+                            </figure>
+                        </div>
+                        <div class="col-12 col-sm-6  col-lg-12">
+                            <h6>Ai influencers With Us</h6>
 
-                        <p>Choose from a wide selection of blocks. Use primitive blocks-text, images, dates, etc or more
-                            complex ones collections, components and more.
-                        </p>
+                            <p>Choose from a wide selection of blocks. Use primitive blocks-text, images, dates, etc or
+                                more
+                                complex ones collections, components and more.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="con">
-                    <div class="about_card">
+                    <div class="about_card row" style="width: 100%">
+                        <div class="col-12 col-sm-6  col-lg-12">
+                            <h6>Customer Trust</h6>
 
-                        <figure>
-                            <img src="{{ asset('assets/images/icons/customer trust.png') }}" alt="">
-                        </figure>
+                            <p>See what you're about to commit across your whole repository with the diff view. Discard
+                                changes if you've made a mistake. Learn more
+                            </p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-12">
+                            <figure>
+                                <img src="{{ asset('assets/images/icons/customer-support.jpeg') }}" alt="">
+                            </figure>
+                        </div>
                     </div>
                 </div>
             </div>

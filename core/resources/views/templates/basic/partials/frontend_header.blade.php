@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="nav-right justify-content-xl-end">
-                        <button class="hero_btn text-white">Submit Tool</button>
+                        <a href="{{ url('submit') }}" role="button" class="hero_btn text-white">Submit Tool</a>
                         {{--  <form action="{{ route('coupon.search') }}" class="header-search">
                             <input type="search" name="search_key" value="{{ request()->search_key }}" class="header-search__input"
                                 placeholder="@lang('Search')">
