@@ -4336,6 +4336,16 @@ label {
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 }
+
+@media (max-width: 767px) {
+  .blog-item__thumb {
+    padding: 0;
+  }
+  .blog-item__thumb img {
+    border-radius: 0;
+  }
+}
+
 .blog-item__thumb.blog_main img {
   border-radius: 0;
   border-top-left-radius: 18px;
@@ -5213,7 +5223,7 @@ div.dashboard-table-card .card-header {
 
 .explore_sec {
   background-color: #101111;
-  padding: 1rem 6%;
+  padding: 1rem;
 }
 .explore_sec h3 {
   color: white;
@@ -5407,8 +5417,8 @@ div.dashboard-table-card .card-header {
     rgba(145, 12, 192, 1) 81%
   );
   color: #fff;
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 500;
   border-radius: 100px;
   padding: 1.3rem;
   border: none;

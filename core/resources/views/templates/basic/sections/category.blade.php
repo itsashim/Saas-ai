@@ -42,10 +42,10 @@
         <h2>Lets Have A Look on Our Platfrom: Ai Tool Kart</h2>
         <div class="about_content row">
             <div class="col-lg-6">
-                <div class="con gap-3">
+                <div class="con  gap-3 justify-content-center ">
                     <div class="about_card">
-                        <h6>10 Millions + Total Views</h6>
-                        <p>"Welcome to our AI Tool Directory,
+                        <h6 class="text-center text-sm-start">10 Millions + Total Views</h6>
+                        <p class="text-center text-sm-start">"Welcome to our AI Tool Directory,
                             your one-stop solution hub!
                             With over 10 million views across multiple
                             platforms and collaborations with popular
@@ -77,10 +77,10 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="con">
+                <div class="con justify-content-center ">
                     <div class="about_card">
-                        <h6>Ai News And Ai Blogs</h6>
-                        <p>"As the proud owner of our AI Tool Directory,
+                        <h6 class="text-center text-sm-start">Ai News And Ai Blogs</h6>
+                        <p class="text-center text-sm-start">"As the proud owner of our AI Tool Directory,
                             we're dedicated to bringing you the latest AI
                             news and the most advanced tools available.
                             With curated blogs offering insightful updates
@@ -100,11 +100,11 @@
         </div>
         <div class="about_content row">
             <div class="col-lg-4">
-                <div class="con">
+                <div class="con justify-content-center ">
                     <div class="about_card row">
                         <div class="col-12 col-sm-6  col-lg-12">
-                            <h6> Only 11 Tools Per Niche</h6>
-                            <p>"At our AI Tool Directory, we believe in quality over
+                            <h6 class="text-center text-sm-start"> Only 11 Tools Per Niche</h6>
+                            <p class="text-center text-sm-start">"At our AI Tool Directory, we believe in quality over
                                 quantity. That's why we feature only the top 11 tools
                                 per niche. By carefully curating this selection, we ensure
                                 that you get access to the best-in-class solutions
@@ -121,7 +121,7 @@
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="con">
+                <div class="con  justify-content-center ">
                     <div class="about_card row">
                         <div class="col-12 col-sm-6  col-lg-12">
                             <figure>
@@ -129,9 +129,10 @@
                             </figure>
                         </div>
                         <div class="col-12 col-sm-6  col-lg-12">
-                            <h6>Ai influencers With Us</h6>
+                            <h6 class="text-center text-sm-start">Ai influencers With Us</h6>
 
-                            <p>Choose from a wide selection of blocks. Use primitive blocks-text, images, dates, etc or
+                            <p class="text-center text-sm-start">Choose from a wide selection of blocks. Use primitive
+                                blocks-text, images, dates, etc or
                                 more
                                 complex ones collections, components and more.
                             </p>
@@ -140,12 +141,13 @@
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="con">
+                <div class="con justify-content-center ">
                     <div class="about_card row" style="width: 100%">
                         <div class="col-12 col-sm-6  col-lg-12">
-                            <h6>Customer Trust</h6>
+                            <h6 class="text-center text-sm-start">Customer Trust</h6>
 
-                            <p>See what you're about to commit across your whole repository with the diff view. Discard
+                            <p class="text-center text-sm-start">See what you're about to commit across your whole
+                                repository with the diff view. Discard
                                 changes if you've made a mistake. Learn more
                             </p>
                         </div>

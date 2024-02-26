@@ -15,13 +15,14 @@
             <div class="col-lg-5 pe-0 pe-3-sm">
                 <div class="section-header">
 
-                    <h2 class="section-title text-white mb-4">{{ __($blog->data_values->heading) }}</h2>
+                    <h2 class="section-title text-white mb-4 text-center text-lg-start">
+                        {{ __($blog->data_values->heading) }}</h2>
 
                     {{-- Main Blog Start --}}
                     @foreach ($blogs as $index => $blog)
                         @if ($index === 2)
                             {{-- Display only the third blog entry --}}
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 d-none d-lg-block">
                                 <div class="blog-item">
                                     <div class="blog-item__thumb blog_main">
                                         <img src="{{ getImage('assets/images/frontend/blog/thumb_' . $blog->data_values->blog_image, '425x425') }}"

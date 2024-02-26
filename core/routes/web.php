@@ -11,9 +11,9 @@ Route::get('/details', function(){
     return view('templates.basic.tool-details');
 });
 
-Route::get('/submit', function(){
-    return view('templates.basic.submit-tool');
-});
+// Route::get('/submit', function(){
+//     return view('templates.basic.submit-tool');
+// });
 
 
 
@@ -44,6 +44,7 @@ Route::controller('SiteController')->group(function () {
     
     
     
+    
     Route::get('/advertise', 'contact')->name('contact');
     // Route::get('/advertise', function(){
     //     return view('templates.basic.advertise');
@@ -53,6 +54,7 @@ Route::controller('SiteController')->group(function () {
     Route::get('/change/{lang?}', 'changeLanguage')->name('lang');
     Route::get('adRedirect/{id}', 'adRedirect')->name('adRedirect');
     Route::get('cookie-policy', 'cookiePolicy')->name('cookie.policy');
+    Route::get('/submit', 'submit')->name('submit');
 
     Route::get('/cookie/accept', 'cookieAccept')->name('cookie.accept');
 

@@ -66,10 +66,10 @@
 
             {{-- Decorations start --}}
             <div class="decoration_wrap">
-                <div class="decoration1">
+                <div class="decoration1 d-none d-lg-block">
                     <img class="star" src="{{ asset('assets/images/icons/herostar.png') }}" alt="">
                 </div>
-                <div class="decoration2">
+                <div class="decoration2 d-none d-lg-block">
                     <img class="star" src="{{ asset('assets/images/icons/herostar.png') }}" alt="">
                 </div>
                 {{-- Infinite section decoration start --}}

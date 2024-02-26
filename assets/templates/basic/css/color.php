@@ -26,7 +26,7 @@ if (!$secondColor or !checkhexcolor($secondColor)) {
 
 
 .header .main-menu li a:hover, .header .main-menu li a:focus, .text--base, .progress-wrap::after, .preloader__circle i, .social-list li a, .coupon-copy-form input, .coupon-social-share li a:hover, .custom-icon-field .form--control:focus ~ i, a:hover, .forgot-pass{
-color: <?php echo $color; ?> !important;
+<!-- color: <?php echo $color; ?> !important; -->
 }
 
 .header__top, .category-item, .testimonial-item, .contact-info .icon, .btn--base, .social-list li a:hover, body::-webkit-scrollbar-thumb, .custom--checkbox input:checked ~ label::before, .bg--base, .custom--file-upload::before, .custom--table thead th, .profile-thumb .avatar-edit label, .pagination .page-item.active .page-link, .pagination .page-item .page-link:hover, .dashboard__item .dashboard__icon, .post-share li a:hover, .custom--card .card-header {
