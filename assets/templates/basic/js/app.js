@@ -217,6 +217,47 @@ $(".testimonial-slider").slick({
   ],
 });
 
+// inflencer slider start
+$(".inflencer_slider").slick({
+  infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  dots: false,
+  arrows: true,
+  prevArrow: '<div class="prev"><i class="las la-angle-left"></i></div>',
+  nextArrow: '<div class="next"><i class="las la-angle-right"></i></div>',
+  autoplay: true,
+  cssEase: "cubic-bezier(0.645, 0.045, 0.355, 1.000)",
+  speed: 1000,
+  autoplaySpeed: 1000,
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 4,
+      },
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+      },
+    },
+  ],
+});
+
 if ($(window).width() < 992) {
   $(".promo-wrapper").appendTo("#ad-append");
 }

@@ -146,11 +146,15 @@ hr {
   opacity: 0.65;
 }
 
+/* Horizontal line Start */
+
 .hr_line {
   height: 1px;
   width: 100%;
   background-color: #404141;
 }
+
+/* Horizontal Line End */
 
 .page-scroll-bar {
   position: fixed;
@@ -5475,3 +5479,103 @@ div.dashboard-table-card .card-header {
 /**/
 /*Self created Resuables End*/
 /**/
+
+/*  */
+/* Subscription Section Start */
+/*  */
+
+.subscription_toggle {
+  background-image: linear-gradient(
+    90deg,
+    rgba(37, 144, 255, 1) 5%,
+    rgba(145, 12, 192, 1) 81%
+  ) !important;
+  max-width: max-content;
+  overflow: hidden;
+  border-radius: 100px;
+  padding: 5px 7px;
+  margin: 2rem auto;
+}
+
+.subscription_toggle.nav-pills .nav-link {
+  background-color: transparent;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.subscription_toggle.nav-pills .nav-link.active {
+  background-color: #101111;
+  color: #ffffff;
+  border-radius: 100px;
+}
+
+.subscription_cards {
+  max-width: 1200px;
+  display: flex;
+  gap: 55px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 4rem auto;
+}
+.services_check figure {
+  width: 1.8rem;
+}
+.subs_card.special .services_check figure svg {
+  width: 100%;
+  color: white;
+}
+
+.services_check span {
+  font-size: 0.8rem;
+}
+
+.subs_card {
+  padding: 2rem;
+  max-width: 350px;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+}
+
+.subs_card.special {
+  background-color: #1e1e1e;
+  transform: scale(1.1);
+}
+.subs_card.special .services_check span {
+  color: white;
+}
+
+.subs_card.special h3 {
+  color: white;
+}
+
+.subs_card.special .subs_price {
+  color: white;
+}
+
+.subs_discount {
+  background-color: #6557ff;
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+  display: block;
+  margin: 10px auto;
+  max-width: max-content;
+  border-radius: 15px;
+  padding: 3px;
+}
+.subs_btn {
+  background-color: #6557ff;
+  border-radius: 10px;
+  color: white;
+  max-width: max-content;
+  padding: 10px 17px;
+}
+
+.subs_btn:hover {
+  color: white;
+}
+
+/*  */
+/* Subscription Section Ends */
+/*  */

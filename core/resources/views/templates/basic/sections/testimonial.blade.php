@@ -29,8 +29,6 @@
             </div>
             <h2 class="text-white mb-5">What Our Client Say</h2>
             <div class="testimonial-slider">
-
-
                 @foreach ($testimonials as $testimonial)
                     <div class="single-slide">
                         <div class="testimonial-item_wrap">
