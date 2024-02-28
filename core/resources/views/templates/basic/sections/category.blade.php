@@ -125,7 +125,7 @@
                     <div class="about_card row">
                         <div class="col-12 col-sm-6  col-lg-12">
                             <figure>
-                                <img src="{{ asset('assets/images/icons/ai-influencer.jpeg') }}" alt="">
+                                <img src="{{ asset('assets/images/icons/basic-blocks.png') }}" alt="">
                             </figure>
                         </div>
                         <div class="col-12 col-sm-6  col-lg-12">

@@ -184,6 +184,239 @@
     </section>
     {{-- ADDED SECTION  END --}}
 
+    {{--  --}}
+    {{-- Ai Influencers Start --}}
+    {{--  --}}
+    <div class="ai_influencers">
+        <div class="ai_influencers_wrap">
+            <div class="footer-logo mt-5">
+                <img class="d-block mx-auto" src="https://check.hostingpro.bond/assets/images/logoIcon/logo_2.png"
+                    alt="">
+            </div>
+            <h3 class="text-white mt-4 text-center text-uppercase fw-bold">Ai influencers with us</h3>
+            <p class="text-white text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. In deserunt harum
+                quos! Voluptatem consectetur itaque velit mollitia iusto.</p>
+            <div class="influencer_cards mt-5 pt-1 overflow-hidden">
+                <div class="influencer_cards_wrap">
+                    <div class="inflencer_slider overflow-hidden">
+                        {{-- Item Start --}}
+                        <div class="influencer_item">
+                            <figure class="d-block mx-auto mt-4 mb-3">
+                                <img src="{{ asset('assets/images/icons/influencer.png') }}" alt="">
+                                {{-- <img class="border_" src="{{ asset('assets/images/icons/influencer-border.png') }}"
+                                        alt=""> --}}
+                            </figure>
+                            <h4 class="text-white text-center">Ashim Rai</h4>
+                            <span class="d-flex justify-content-center mb-4">Web Developer
+                            </span>
+                            <p class="text-white text-center mb-4">A kiddo who uses Bootstrap and Laravel in web
+                                development.
+                                Currently
+                                playing around with
+                                design via Figma</p>
+                            <a href="mailto:ashim@gmial.com" class="d-block mx-auto mb-4"
+                                role="button">ashim@gmail.com</a>
+                            <div class="influencer-social">
+                                <ion-icon name="logo-twitter" class="ion"></ion-icon>
+                                <ion-icon name="logo-linkedin" class="ion"></ion-icon>
+                                <ion-icon name="logo-dribbble" class="ion"></ion-icon>
+                                <ion-icon name="logo-github" class="ion"></ion-icon>
+                                <ion-icon name="logo-instagram" class="ion"></ion-icon>
+                            </div>
+                            <div class="back-border"></div>
+                        </div>
+                        {{-- Item End --}}
+                        {{-- Item Start --}}
+                        <div class="influencer_item">
+                            <figure class="d-block mx-auto mt-4 mb-3">
+                                <img src="{{ asset('assets/images/icons/influencer.png') }}" alt="">
+                                {{-- <img class="border_" src="{{ asset('assets/images/icons/influencer-border.png') }}"
+                                        alt=""> --}}
+                            </figure>
+                            <h4 class="text-white text-center">Ashim Rai</h4>
+                            <span class="d-flex justify-content-center mb-4">Web Developer
+                            </span>
+                            <p class="text-white text-center mb-4">A kiddo who uses Bootstrap and Laravel in web
+                                development.
+                                Currently
+                                playing around with
+                                design via Figma</p>
+                            <a href="mailto:ashim@gmial.com" class="d-block mx-auto mb-4"
+                                role="button">ashim@gmail.com</a>
+                            <div class="influencer-social">
+                                <ion-icon name="logo-twitter" class="ion"></ion-icon>
+                                <ion-icon name="logo-linkedin" class="ion"></ion-icon>
+                                <ion-icon name="logo-dribbble" class="ion"></ion-icon>
+                                <ion-icon name="logo-github" class="ion"></ion-icon>
+                                <ion-icon name="logo-instagram" class="ion"></ion-icon>
+                            </div>
+                            <div class="back-border"></div>
+                        </div>
+                        {{-- Item End --}}
+                        {{-- Item Start --}}
+                        <div class="influencer_item">
+                            <figure class="d-block mx-auto mt-4 mb-3">
+                                <img src="{{ asset('assets/images/icons/influencer.png') }}" alt="">
+                                {{-- <img class="border_" src="{{ asset('assets/images/icons/influencer-border.png') }}"
+                                        alt=""> --}}
+                            </figure>
+                            <h4 class="text-white text-center">Ashim Rai</h4>
+                            <span class="d-flex justify-content-center mb-4">Web Developer
+                            </span>
+                            <p class="text-white text-center mb-4">A kiddo who uses Bootstrap and Laravel in web
+                                development.
+                                Currently
+                                playing around with
+                                design via Figma</p>
+                            <a href="mailto:ashim@gmial.com" class="d-block mx-auto mb-4"
+                                role="button">ashim@gmail.com</a>
+                            <div class="influencer-social">
+                                <ion-icon name="logo-twitter" class="ion"></ion-icon>
+                                <ion-icon name="logo-linkedin" class="ion"></ion-icon>
+                                <ion-icon name="logo-dribbble" class="ion"></ion-icon>
+                                <ion-icon name="logo-github" class="ion"></ion-icon>
+                                <ion-icon name="logo-instagram" class="ion"></ion-icon>
+                            </div>
+                            <div class="back-border"></div>
+                        </div>
+                        {{-- Item End --}}
+                        {{-- Item Start --}}
+                        <div class="influencer_item">
+                            <figure class="d-block mx-auto mt-4 mb-3">
+                                <img src="{{ asset('assets/images/icons/influencer.png') }}" alt="">
+                                {{-- <img class="border_" src="{{ asset('assets/images/icons/influencer-border.png') }}"
+                                        alt=""> --}}
+                            </figure>
+                            <h4 class="text-white text-center">Ashim Rai</h4>
+                            <span class="d-flex justify-content-center mb-4">Web Developer
+                            </span>
+                            <p class="text-white text-center mb-4">A kiddo who uses Bootstrap and Laravel in web
+                                development.
+                                Currently
+                                playing around with
+                                design via Figma</p>
+                            <a href="mailto:ashim@gmial.com" class="d-block mx-auto mb-4"
+                                role="button">ashim@gmail.com</a>
+                            <div class="influencer-social">
+                                <ion-icon name="logo-twitter" class="ion"></ion-icon>
+                                <ion-icon name="logo-linkedin" class="ion"></ion-icon>
+                                <ion-icon name="logo-dribbble" class="ion"></ion-icon>
+                                <ion-icon name="logo-github" class="ion"></ion-icon>
+                                <ion-icon name="logo-instagram" class="ion"></ion-icon>
+                            </div>
+                            <div class="back-border"></div>
+                        </div>
+                        {{-- Item End --}}
+                        {{-- Item Start --}}
+                        <div class="influencer_item">
+                            <figure class="d-block mx-auto mt-4 mb-3">
+                                <img src="{{ asset('assets/images/icons/influencer.png') }}" alt="">
+                                {{-- <img class="border_" src="{{ asset('assets/images/icons/influencer-border.png') }}"
+                                        alt=""> --}}
+                            </figure>
+                            <h4 class="text-white text-center">Ashim Rai</h4>
+                            <span class="d-flex justify-content-center mb-4">Web Developer
+                            </span>
+                            <p class="text-white text-center mb-4">A kiddo who uses Bootstrap and Laravel in web
+                                development.
+                                Currently
+                                playing around with
+                                design via Figma</p>
+                            <a href="mailto:ashim@gmial.com" class="d-block mx-auto mb-4"
+                                role="button">ashim@gmail.com</a>
+                            <div class="influencer-social">
+                                <ion-icon name="logo-twitter" class="ion"></ion-icon>
+                                <ion-icon name="logo-linkedin" class="ion"></ion-icon>
+                                <ion-icon name="logo-dribbble" class="ion"></ion-icon>
+                                <ion-icon name="logo-github" class="ion"></ion-icon>
+                                <ion-icon name="logo-instagram" class="ion"></ion-icon>
+                            </div>
+                            <div class="back-border"></div>
+                        </div>
+                        {{-- Item End --}}
+                        {{-- Item Start --}}
+                        <div class="influencer_item">
+                            <figure class="d-block mx-auto mt-4 mb-3">
+                                <img src="{{ asset('assets/images/icons/influencer.png') }}" alt="">
+                                {{-- <img class="border_" src="{{ asset('assets/images/icons/influencer-border.png') }}"
+                                        alt=""> --}}
+                            </figure>
+                            <h4 class="text-white text-center">Ashim Rai</h4>
+                            <span class="d-flex justify-content-center mb-4">Web Developer
+                            </span>
+                            <p class="text-white text-center mb-4">A kiddo who uses Bootstrap and Laravel in web
+                                development.
+                                Currently
+                                playing around with
+                                design via Figma</p>
+                            <a href="mailto:ashim@gmial.com" class="d-block mx-auto mb-4"
+                                role="button">ashim@gmail.com</a>
+                            <div class="influencer-social">
+                                <ion-icon name="logo-twitter" class="ion"></ion-icon>
+                                <ion-icon name="logo-linkedin" class="ion"></ion-icon>
+                                <ion-icon name="logo-dribbble" class="ion"></ion-icon>
+                                <ion-icon name="logo-github" class="ion"></ion-icon>
+                                <ion-icon name="logo-instagram" class="ion"></ion-icon>
+                            </div>
+                            <div class="back-border"></div>
+                        </div>
+                        {{-- Item End --}}
+                        {{-- Item Start --}}
+                        <div class="influencer_item">
+                            <figure class="d-block mx-auto mt-4 mb-3">
+                                <img src="{{ asset('assets/images/icons/influencer.png') }}" alt="">
+                                {{-- <img class="border_" src="{{ asset('assets/images/icons/influencer-border.png') }}"
+                                        alt=""> --}}
+                            </figure>
+                            <h4 class="text-white text-center">Ashim Rai</h4>
+                            <span class="d-flex justify-content-center mb-4">Web Developer
+                            </span>
+                            <p class="text-white text-center mb-4">A kiddo who uses Bootstrap and Laravel in web
+                                development.
+                                Currently
+                                playing around with
+                                design via Figma</p>
+                            <a href="mailto:ashim@gmial.com" class="d-block mx-auto mb-4"
+                                role="button">ashim@gmail.com</a>
+                            <div class="influencer-social">
+                                <ion-icon name="logo-twitter" class="ion"></ion-icon>
+                                <ion-icon name="logo-linkedin" class="ion"></ion-icon>
+                                <ion-icon name="logo-dribbble" class="ion"></ion-icon>
+                                <ion-icon name="logo-github" class="ion"></ion-icon>
+                                <ion-icon name="logo-instagram" class="ion"></ion-icon>
+                            </div>
+                            <div class="back-border"></div>
+                        </div>
+                        {{-- Item End --}}
+                    </div>
+
+                </div>
+                {{-- arrow start --}}
+                <div class="d-flex gap-3 justify-content-center my-5 align-items-center">
+                    <button class="influence_prev slick-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+                        </svg>
+                    </button>
+                    <a class="view_all btn text-white btn-md" href="" role="button">view
+                        all</a>
+                    <button class="infleunce_next slick-arrow"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                        </svg>
+                    </button>
+                </div>
+                {{-- arrow end --}}
+            </div>
+        </div>
+    </div>
+    {{--  --}}
+    {{-- Ai Influencers End --}}
+    {{--  --}}
+
 
 
     {{-- Subscriptions/List Fees Start --}}
@@ -642,116 +875,118 @@
 
             </div>
         </div>
+
+        <button class="upload btn text-white btn-md mx-auto text-center d-block">upload now</button>
+        <p class="mt-3 text-center fw-light text-white mx-auto" style="max-width: 45ch">AFTER SUBMISSSION WE WILL
+            CHECK AND
+            TEST YOUR TOOL THEN
+            WE WILL PUBLISH IT</p>
     </section>
     {{-- Top 3 postions End --}}
 
 
-    {{--  --}}
-    {{-- Ai Influencers Start --}}
-    {{--  --}}
-    <div class="ai_influencers">
-        <div class="ai_influencers_wrap">
-            <div class="footer-logo mt-5">
-                <img class="d-block mx-auto" src="https://check.hostingpro.bond/assets/images/logoIcon/logo_2.png"
-                    alt="">
-            </div>
-            <h3 class="text-white mt-4 text-center text-uppercase fw-bold">Ai influencers with us</h3>
-            <p class="text-white text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. In deserunt harum
-                quos! Voluptatem consectetur itaque velit mollitia iusto.</p>
-            <div class="influencer_cards">
-                <div class="influencer_cards_wrap">
-                    <div class="inflencer_slider">
-
-                        <div class="testimonial-item_wrap">
-                            <div class="testimonial-item" style="background-color: #161616 !important">
-                                <div class="rating">
-                                    <div>
-                                        <img src="{{ asset('assets/images/icons/rating-star.png') }}" alt="">
-                                    </div>
+    <div class="faq_sec d-none d-md-block">
+        <div class="faq_wrap">
+            <div class="container">
+                <h2 class="text-white text-start mb-5 pb-2">Frequerntly Asked Questions</h2>
+                <div class="row align-items-start">
+                    {{-- Faq Question Start --}}
+                    <div class="col-lg-6">
+                        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
+                            aria-orientation="vertical">
+                            <button class="nav-link active d-flex justify-content-between align-items-center"
+                                id="v-pills-one-tab" data-bs-toggle="pill" data-bs-target="#v-pills-one" type="button"
+                                role="tab" aria-controls="v-pills-one" aria-selected="true">
+                                <div class="d-flex align-items-center">
+                                    <div class="circle me-2"></div>
+                                    <p>What is a Payment Gateway?</p>
                                 </div>
-                                <h4 class="testimonial_title">Title</h4>
-                                <p class="testimonial-item__details pb-3">
-                                    Hello
-                                </p>
-                                <h6 class="mt-4 text-white">hello</h6>
-                                <span>hello</span>
-                            </div>
-                        </div>
-                        <div class="testimonial-item_wrap">
-                            <div class="testimonial-item" style="background-color: #161616 !important">
-                                <div class="rating">
-                                    <div>
-                                        <img src="{{ asset('assets/images/icons/rating-star.png') }}" alt="">
-                                    </div>
+                                <span><ion-icon name="chevron-forward-outline"></ion-icon></span>
+                            </button>
+                            <button class="nav-link d-flex justify-content-between align-items-center"
+                                id="v-pills-two-tab" data-bs-toggle="pill" data-bs-target="#v-pills-two" type="button"
+                                role="tab" aria-controls="v-pills-two" aria-selected="false">
+                                <div class="d-flex align-items-center">
+                                    <div class="circle me-2"></div>
+                                    <p>Do I need to pay to instapay even when there is no transaction going
+                                        on
+                                        in my business?</p>
                                 </div>
-                                <h4 class="testimonial_title">Title</h4>
-                                <p class="testimonial-item__details pb-3">
-                                    Hello
-                                </p>
-                                <h6 class="mt-4 text-white">hello</h6>
-                                <span>hello</span>
-                            </div>
-                        </div>
+                                <span><ion-icon name="chevron-forward-outline"></ion-icon></span>
+                            </button>
+                            <button class="nav-link d-flex justify-content-between align-items-center"
+                                id="v-pills-three-tab" data-bs-toggle="pill" data-bs-target="#v-pills-three"
+                                type="button" role="tab" aria-controls="v-pills-three" aria-selected="false">
 
-                        <div class="testimonial-item_wrap">
-                            <div class="testimonial-item" style="background-color: #161616 !important">
-                                <div class="rating">
-                                    <div>
-                                        <img src="{{ asset('assets/images/icons/rating-star.png') }}" alt="">
-                                    </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="circle me-2"></div>
+                                    <p>What platforms does instapay payment
+                                        gateway support?</p>
                                 </div>
-                                <h4 class="testimonial_title">Title</h4>
-                                <p class="testimonial-item__details pb-3">
-                                    Hello
-                                </p>
-                                <h6 class="mt-4 text-white">hello</h6>
-                                <span>hello</span>
-                            </div>
-                        </div>
-
-
-                        <div class="testimonial-item_wrap">
-                            <div class="testimonial-item" style="background-color: #161616 !important">
-                                <div class="rating">
-                                    <div>
-                                        <img src="{{ asset('assets/images/icons/rating-star.png') }}" alt="">
-                                    </div>
+                                <span><ion-icon name="chevron-forward-outline"></ion-icon></span>
+                            </button>
+                            <button class="nav-link d-flex justify-content-between align-items-center"
+                                id="v-pills-four-tab" data-bs-toggle="pill" data-bs-target="#v-pills-four"
+                                type="button" role="tab" aria-controls="v-pills-four" aria-selected="false">
+                                <div class="d-flex align-items-center">
+                                    <div class="circle me-2"></div>
+                                    <p>Does instapay provide international
+                                        payments support?</p>
                                 </div>
-                                <h4 class="testimonial_title">Title</h4>
-                                <p class="testimonial-item__details pb-3">
-                                    Hello
-                                </p>
-                                <h6 class="mt-4 text-white">hello</h6>
-                                <span>hello</span>
-                            </div>
-                        </div>
-
-
-                        <div class="testimonial-item_wrap">
-                            <div class="testimonial-item" style="background-color: #161616 !important">
-                                <div class="rating">
-                                    <div>
-                                        <img src="{{ asset('assets/images/icons/rating-star.png') }}" alt="">
-                                    </div>
+                                <span><ion-icon name="chevron-forward-outline"></ion-icon></span>
+                            </button>
+                            <button class="nav-link d-flex justify-content-between align-items-center"
+                                id="v-pills-five-tab" data-bs-toggle="pill" data-bs-target="#v-pills-five"
+                                type="button" role="tab" aria-controls="v-pills-five" aria-selected="false">
+                                <div class="d-flex align-items-center">
+                                    <div class="circle me-2"></div>
+                                    <p> Is there any setup fee or annual
+                                        maintainace fee that I need to pay
+                                        regularly?</p>
                                 </div>
-                                <h4 class="testimonial_title">Title</h4>
-                                <p class="testimonial-item__details pb-3">
-                                    Hello
-                                </p>
-                                <h6 class="mt-4 text-white">hello</h6>
-                                <span>hello</span>
-                            </div>
+                                <span><ion-icon name="chevron-forward-outline"></ion-icon></span>
+                            </button>
                         </div>
-
-
                     </div>
 
-                </div>
+                    {{-- Faq Question End --}}
 
+                    {{-- Faq Answer start --}}
+                    <div class="col-lg-6">
+                        <div class="tab-content" id="v-pills-tabContent">
+                            <div class="tab-pane fade show active" id="v-pills-one" role="tabpanel"
+                                aria-labelledby="v-pills-one-tab">
+                                <h4 class="text-white text-center fw-bold">What is a Payment Gateway?</h4>
+                                <p class="mt-5 text-white">A payment gateway is an ecommerce service that processes online
+                                    payments
+                                    for
+                                    online as well as offline businesses. Payment gateways help accept payments by
+                                    transferring
+                                    key information from their merchant websites to issuing banks, card associations and
+                                    online
+                                    wallet players.</p>
+                                <p class="text-white mt-3">
+                                    Payment gateways play a vital role in the online transaction process, which is the
+                                    realisation of value, and hence are seen as an important pillar of ecommerce.
+                                </p>
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-two" role="tabpanel"
+                                aria-labelledby="v-pills-two-tab">
+                                two</div>
+                            <div class="tab-pane fade" id="v-pills-three" role="tabpanel"
+                                aria-labelledby="v-pills-three-tab">three</div>
+                            <div class="tab-pane fade" id="v-pills-four" role="tabpanel"
+                                aria-labelledby="v-pills-four-tab">
+                                four</div>
+                            <div class="tab-pane fade" id="v-pills-five" role="tabpanel"
+                                aria-labelledby="v-pills-five-tab">
+                                five</div>
+                        </div>
+                    </div>
+
+                    {{-- Fa1 Answer End --}}
+                </div>
             </div>
         </div>
     </div>
-    {{--  --}}
-    {{-- Ai Influencers End --}}
-    {{--  --}}
 @endsection

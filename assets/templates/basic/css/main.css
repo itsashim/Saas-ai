@@ -5518,6 +5518,16 @@ div.dashboard-table-card .card-header {
   justify-content: center;
   margin: 4rem auto;
 }
+.top_postions .upload {
+  background-image: linear-gradient(
+    90deg,
+    rgba(37, 144, 255, 1) 5%,
+    rgba(145, 12, 192, 1) 81%
+  ) !important;
+  border-radius: 100px;
+  width: 10rem;
+  border: none;
+}
 .services_check figure {
   width: 1.8rem;
 }
@@ -5578,4 +5588,167 @@ div.dashboard-table-card .card-header {
 
 /*  */
 /* Subscription Section Ends */
+/*  */
+
+/*  */
+/* influencer Section Start */
+/*  */
+
+.ai_influencers_wrap {
+  border-radius: 20px;
+  border: 2px solid #909090;
+  padding: 0 3%;
+  margin-inline: 3%;
+}
+
+.back-border {
+  background: linear-gradient(
+    rgba(37, 144, 255, 1) 5%,
+    rgba(145, 12, 192, 1) 81%
+  );
+  height: 5rem;
+  width: 100%;
+}
+.influencer_item {
+  border-radius: 36px;
+  background-color: #161616;
+  position: relative;
+  overflow: hidden;
+  margin-inline: 1rem;
+}
+
+.influencer_yellow {
+  color: #f9f871;
+}
+
+.influencer_item a {
+  background-color: #655ca1;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  max-width: max-content;
+}
+
+.influencer_item span {
+  color: #655ca1;
+}
+
+.influencer_item figure {
+  position: relative;
+  width: 6rem;
+  border-radius: 50%;
+}
+
+.influencer_item figure img {
+  width: 100%;
+}
+
+.influencer_item figure .border_ {
+  position: absolute;
+}
+
+.influencer_item p {
+  max-width: 20ch;
+  margin: 0 auto;
+}
+
+.influencer-social {
+  position: absolute;
+  bottom: 8px;
+  display: flex;
+  justify-content: space-around;
+  background: #161616;
+  width: 95%;
+  padding: 2rem 1rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 34px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.influencer-social .ion {
+  color: #655ca1;
+  font-size: 1.6rem;
+}
+
+.influence_prev,
+.infleunce_next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #101111;
+  border: 1px solid #404141;
+  width: 3rem;
+  height: 3rem;
+}
+
+.influence_prev svg,
+.infleunce_next svg {
+  width: 1.7rem;
+  color: #808080;
+}
+
+.ai_influencers_wrap .view_all {
+  background-image: linear-gradient(
+    90deg,
+    rgba(37, 144, 255, 1) 5%,
+    rgba(145, 12, 192, 1) 81%
+  ) !important;
+  border-radius: 100px;
+  width: 10rem;
+  border: none;
+}
+
+/*  */
+/* influencer Section End */
+/*  */
+
+/*  */
+/* faq section start */
+/*  */
+
+.faq_sec {
+  background-color: #101111;
+}
+
+.faq_wrap {
+  background-color: #101111;
+}
+
+.faq_sec .faq_wrap .nav-link {
+  text-align: start !important;
+  color: white;
+  margin-bottom: 1rem;
+}
+.faq_sec .faq_wrap .nav-link.active {
+  background-color: transparent !important;
+}
+.faq_sec .faq_wrap .nav-link p {
+  max-width: 40ch;
+}
+
+.faq_sec .faq_wrap .nav-link .circle {
+  background-color: #8d12c3;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+.faq_sec .faq_wrap .nav-link ion-icon {
+  color: #8d12c3;
+  font-size: 1.3rem;
+  transition: all 0.3s;
+}
+
+.faq_sec .faq_wrap .nav-link.active .circle {
+  background-color: #5d5fef;
+}
+.faq_sec .faq_wrap .nav-link.active ion-icon {
+  color: #5d5fef;
+}
+
+/*  */
+/* faq section End */
 /*  */

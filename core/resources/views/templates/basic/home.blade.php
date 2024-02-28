@@ -46,12 +46,13 @@
             {{-- Types Tab Start --}}
             <div class="types_tab d-flex gap-2 flex-wrap justify-content-center pb-5">
                 {{--  --}}
-                @foreach ($categories as $category)
+                @foreach ($categories as $index => $category)
                     {{-- @php echo $category->icon @endphp --}}
-
-                    <a href="{{ route('coupon.filter.type', ['category', $category->id]) }}" class="tab_wrap">
-                        <span class="tab">{{ __($category->name) }}</span>
-                    </a>
+                    @if ($index < 20)
+                        <a href="{{ route('coupon.filter.type', ['category', $category->id]) }}" class="tab_wrap">
+                            <span class="tab">{{ __($category->name) }}</span>
+                        </a>
+                    @endif
                 @endforeach
             </div>
             {{-- Types Tab End. --}}
