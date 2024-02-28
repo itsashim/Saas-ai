@@ -23,8 +23,8 @@
                             <li class="nav-home-icon d-flex justify-content-center align-items-center"><img
                                     src="{{ asset('assets/images/icons/nav-home-icon.png') }}" alt=""></li>
                             <li><a href="{{ route('coupon.search') }}">@lang('AI tools')</a></li>
-                            <li><a href="{{ url('submit') }}">@lang('AI Academy ')</a></li>
-                            <li><a href="{{ route('home') }}">@lang('About Us')</a></li>
+                            {{-- <li><a href="{{ url('submit') }}">@lang('AI Academy ')</a></li> --}}
+                            <li><a href="{{ route('about-us') }}">@lang('About Us')</a></li>
                             <li><a href="{{ url('advertise') }}">@lang('Advertise')</a></li>
                             <li><a href="{{ url('submit') }}">@lang('Submitt Tool')</a></li>
 

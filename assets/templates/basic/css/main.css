@@ -5092,7 +5092,7 @@ div.dashboard-table-card .card-header {
 /* Types tabs start */
 .types_tab {
   width: 100%;
-  max-width: 749px;
+  max-width: 800px;
   margin: 0 auto;
   background-color: #101111;
 }
@@ -5126,7 +5126,7 @@ div.dashboard-table-card .card-header {
 .decoration2 {
   position: absolute;
   left: 17%;
-  top: 72%;
+  top: 61%;
 }
 .decoration3 {
   position: absolute;
@@ -5528,6 +5528,11 @@ div.dashboard-table-card .card-header {
   width: 10rem;
   border: none;
 }
+
+.top_postions .upload:hover {
+  color: white;
+}
+
 .services_check figure {
   width: 1.8rem;
 }

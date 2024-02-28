@@ -10,7 +10,7 @@
 
 <section class="pt-80 pb-80 blog_sec">
 
-    <div class="mx-auto" style="max-width: 1000px">
+    <div class="mx-auto" style="max-width: 1200px">
         <div class="row " style="width: 100%">
             <div class="col-lg-5 pe-0 pe-3-sm">
                 <div class="section-header">

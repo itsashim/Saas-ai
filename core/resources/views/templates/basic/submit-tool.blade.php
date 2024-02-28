@@ -108,7 +108,7 @@
                         <div class="about_card row">
                             <div class="col-12 col-sm-6  col-lg-12">
                                 <figure>
-                                    <img src="{{ asset('assets/images/icons/ai-influencer.jpeg') }}" alt="">
+                                    <img src="{{ asset('assets/images/icons/basic-blocks.png') }}" alt="">
                                 </figure>
                             </div>
                             <div class="col-12 col-sm-6  col-lg-12">
@@ -420,7 +420,7 @@
 
 
     {{-- Subscriptions/List Fees Start --}}
-    <section class="subscription_sec">
+    <section class="subscription_sec mt-5">
         <div class="subscription_sec_wrap">
             <h2 class="text-uppercase text-white font-bold text-center">List Fees</h2>
             <p class="text-white mx-auto text-center"></p>
@@ -876,7 +876,8 @@
             </div>
         </div>
 
-        <button class="upload btn text-white btn-md mx-auto text-center d-block">upload now</button>
+        <a role="button" href="{{ '/contact' }}"
+            class="upload btn text-white btn-md mx-auto text-center d-block">upload now</a>
         <p class="mt-3 text-center fw-light text-white mx-auto" style="max-width: 45ch">AFTER SUBMISSSION WE WILL
             CHECK AND
             TEST YOUR TOOL THEN
@@ -885,7 +886,7 @@
     {{-- Top 3 postions End --}}
 
 
-    <div class="faq_sec d-none d-md-block">
+    <div class="faq_sec d-none d-md-block pb-5 mt-5">
         <div class="faq_wrap">
             <div class="container">
                 <h2 class="text-white text-start mb-5 pb-2">Frequerntly Asked Questions</h2>

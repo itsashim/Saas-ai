@@ -1,123 +1,841 @@
 @extends($activeTemplate . 'layouts.frontend')
-@section('content')
-    @php
-        $contact = getContent('contact_us.content', true);
-        $socials = getContent('social_icon.element', false, null, true);
-    @endphp
 
-    <section class="pt-80 pb-80 contact_sec" style="background: #070707 !important">
-        <div class="container">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-xxl-4 col-lg-5">
-                    <div class="contact-left-area">
-                        <div class="contact-info-wrapper">
-                            <div class="contact-info-list mb-4">
-                                <div class="contact-info">
-                                    <div class="icon" style="background-color: #0c0a20 !important">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                    <div class="content">
-                                        <h6 class="title mb-1">@lang('Office Address')</h6>
-                                        <p>{{ __($contact->data_values->contact_details) }}</p>
-                                    </div>
-                                </div><!-- contact-info end -->
-                                <div class="contact-info">
-                                    <div class="icon" style="background-color: #0c0a20 !important">
-                                        <i class="fas fa-envelope"></i>
-                                    </div>
-                                    <div class="content">
-                                        <h6 class="title mb-1">@lang('Email Address')</h6>
-                                        <p><a
-                                                href="mailto:{{ $contact->data_values->email_address }}">{{ $contact->data_values->email_address }}</a>
-                                        </p>
-                                    </div>
-                                </div><!-- contact-info end -->
-                                <div class="contact-info">
-                                    <div class="icon" style="background-color: #0c0a20 !important">
-                                        <i class="fas fa-phone-alt"></i>
-                                    </div>
-                                    <div class="content">
-                                        <h6 class="title mb-1">@lang('Phone Number')</h6>
-                                        <p><a
-                                                href="tel:{{ $contact->data_values->contact_number }}">{{ $contact->data_values->contact_number }}</a>
-                                        </p>
-                                    </div>
-                                </div><!-- contact-info end -->
+@section('styles')
+@endsection
+
+@section('content')
+    <style>
+        .inner-hero.bg_img {
+            display: none;
+        }
+    </style>
+
+    {{-- HERO Section Start --}}
+    <section class="hero_sec">
+        <div class="hero_wrap" style="padding-top: 7rem !important">
+            <h2 class="text-white fw-light text-center">Advertise</h2>
+            <h1 class="text-center mx-auto fw-bold mt-3">
+                AI TOOL DIRECTORY
+            </h1>
+            <p class="text-center mx-auto">
+
+            </p>
+
+            {{-- Decorations start --}}
+            <div class="decoration_wrap">
+                <div class="decoration1 d-none d-lg-block">
+                    <img class="star" src="{{ asset('assets/images/icons/herostar.png') }}" alt="">
+                </div>
+            </div>
+            {{-- Decorations End --}}
+
+        </div>
+
+    </section>
+    {{-- HERO SECTION END --}}
+
+
+
+    {{--  --}}
+    {{-- Ai Influencers Start --}}
+    {{--  --}}
+    <div class="ai_influencers mt-5">
+        <div class="ai_influencers_wrap">
+            <div class="footer-logo mt-5">
+                <img class="d-block mx-auto" src="https://check.hostingpro.bond/assets/images/logoIcon/logo_2.png"
+                    alt="">
+            </div>
+            <h3 class="text-white mt-4 text-center text-uppercase fw-bold">Ai influencers with us</h3>
+            <p class="text-white text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. In deserunt harum
+                quos! Voluptatem consectetur itaque velit mollitia iusto.</p>
+            <div class="influencer_cards mt-5 pt-1 overflow-hidden">
+                <div class="influencer_cards_wrap">
+                    <div class="inflencer_slider overflow-hidden">
+                        {{-- Item Start --}}
+                        <div class="influencer_item">
+                            <figure class="d-block mx-auto mt-4 mb-3">
+                                <img src="{{ asset('assets/images/icons/influencer.png') }}" alt="">
+                                {{-- <img class="border_" src="{{ asset('assets/images/icons/influencer-border.png') }}"
+                                        alt=""> --}}
+                            </figure>
+                            <h4 class="text-white text-center">Ashim Rai</h4>
+                            <span class="d-flex justify-content-center mb-4">Web Developer
+                            </span>
+                            <p class="text-white text-center mb-4">A kiddo who uses Bootstrap and Laravel in web
+                                development.
+                                Currently
+                                playing around with
+                                design via Figma</p>
+                            <a href="mailto:ashim@gmial.com" class="d-block mx-auto mb-4" role="button">ashim@gmail.com</a>
+                            <div class="influencer-social">
+                                <ion-icon name="logo-twitter" class="ion"></ion-icon>
+                                <ion-icon name="logo-linkedin" class="ion"></ion-icon>
+                                <ion-icon name="logo-dribbble" class="ion"></ion-icon>
+                                <ion-icon name="logo-github" class="ion"></ion-icon>
+                                <ion-icon name="logo-instagram" class="ion"></ion-icon>
                             </div>
-                            <h6 class="fs--16px text-center">@lang('Follow Us')</h6>
-                            <ul class="social-list justify-content-center mt-3">
-                                @foreach ($socials as $social)
-                                    <li><a href="{{ $social->data_values->url }}" target="_blank">@php echo $social->data_values->social_icon @endphp</a></li>
-                                @endforeach
-                            </ul>
+                            <div class="back-border"></div>
+                        </div>
+                        {{-- Item End --}}
+                        {{-- Item Start --}}
+                        <div class="influencer_item">
+                            <figure class="d-block mx-auto mt-4 mb-3">
+                                <img src="{{ asset('assets/images/icons/influencer.png') }}" alt="">
+                                {{-- <img class="border_" src="{{ asset('assets/images/icons/influencer-border.png') }}"
+                                        alt=""> --}}
+                            </figure>
+                            <h4 class="text-white text-center">Ashim Rai</h4>
+                            <span class="d-flex justify-content-center mb-4">Web Developer
+                            </span>
+                            <p class="text-white text-center mb-4">A kiddo who uses Bootstrap and Laravel in web
+                                development.
+                                Currently
+                                playing around with
+                                design via Figma</p>
+                            <a href="mailto:ashim@gmial.com" class="d-block mx-auto mb-4" role="button">ashim@gmail.com</a>
+                            <div class="influencer-social">
+                                <ion-icon name="logo-twitter" class="ion"></ion-icon>
+                                <ion-icon name="logo-linkedin" class="ion"></ion-icon>
+                                <ion-icon name="logo-dribbble" class="ion"></ion-icon>
+                                <ion-icon name="logo-github" class="ion"></ion-icon>
+                                <ion-icon name="logo-instagram" class="ion"></ion-icon>
+                            </div>
+                            <div class="back-border"></div>
+                        </div>
+                        {{-- Item End --}}
+                        {{-- Item Start --}}
+                        <div class="influencer_item">
+                            <figure class="d-block mx-auto mt-4 mb-3">
+                                <img src="{{ asset('assets/images/icons/influencer.png') }}" alt="">
+                                {{-- <img class="border_" src="{{ asset('assets/images/icons/influencer-border.png') }}"
+                                        alt=""> --}}
+                            </figure>
+                            <h4 class="text-white text-center">Ashim Rai</h4>
+                            <span class="d-flex justify-content-center mb-4">Web Developer
+                            </span>
+                            <p class="text-white text-center mb-4">A kiddo who uses Bootstrap and Laravel in web
+                                development.
+                                Currently
+                                playing around with
+                                design via Figma</p>
+                            <a href="mailto:ashim@gmial.com" class="d-block mx-auto mb-4" role="button">ashim@gmail.com</a>
+                            <div class="influencer-social">
+                                <ion-icon name="logo-twitter" class="ion"></ion-icon>
+                                <ion-icon name="logo-linkedin" class="ion"></ion-icon>
+                                <ion-icon name="logo-dribbble" class="ion"></ion-icon>
+                                <ion-icon name="logo-github" class="ion"></ion-icon>
+                                <ion-icon name="logo-instagram" class="ion"></ion-icon>
+                            </div>
+                            <div class="back-border"></div>
+                        </div>
+                        {{-- Item End --}}
+                        {{-- Item Start --}}
+                        <div class="influencer_item">
+                            <figure class="d-block mx-auto mt-4 mb-3">
+                                <img src="{{ asset('assets/images/icons/influencer.png') }}" alt="">
+                                {{-- <img class="border_" src="{{ asset('assets/images/icons/influencer-border.png') }}"
+                                        alt=""> --}}
+                            </figure>
+                            <h4 class="text-white text-center">Ashim Rai</h4>
+                            <span class="d-flex justify-content-center mb-4">Web Developer
+                            </span>
+                            <p class="text-white text-center mb-4">A kiddo who uses Bootstrap and Laravel in web
+                                development.
+                                Currently
+                                playing around with
+                                design via Figma</p>
+                            <a href="mailto:ashim@gmial.com" class="d-block mx-auto mb-4" role="button">ashim@gmail.com</a>
+                            <div class="influencer-social">
+                                <ion-icon name="logo-twitter" class="ion"></ion-icon>
+                                <ion-icon name="logo-linkedin" class="ion"></ion-icon>
+                                <ion-icon name="logo-dribbble" class="ion"></ion-icon>
+                                <ion-icon name="logo-github" class="ion"></ion-icon>
+                                <ion-icon name="logo-instagram" class="ion"></ion-icon>
+                            </div>
+                            <div class="back-border"></div>
+                        </div>
+                        {{-- Item End --}}
+                        {{-- Item Start --}}
+                        <div class="influencer_item">
+                            <figure class="d-block mx-auto mt-4 mb-3">
+                                <img src="{{ asset('assets/images/icons/influencer.png') }}" alt="">
+                                {{-- <img class="border_" src="{{ asset('assets/images/icons/influencer-border.png') }}"
+                                        alt=""> --}}
+                            </figure>
+                            <h4 class="text-white text-center">Ashim Rai</h4>
+                            <span class="d-flex justify-content-center mb-4">Web Developer
+                            </span>
+                            <p class="text-white text-center mb-4">A kiddo who uses Bootstrap and Laravel in web
+                                development.
+                                Currently
+                                playing around with
+                                design via Figma</p>
+                            <a href="mailto:ashim@gmial.com" class="d-block mx-auto mb-4"
+                                role="button">ashim@gmail.com</a>
+                            <div class="influencer-social">
+                                <ion-icon name="logo-twitter" class="ion"></ion-icon>
+                                <ion-icon name="logo-linkedin" class="ion"></ion-icon>
+                                <ion-icon name="logo-dribbble" class="ion"></ion-icon>
+                                <ion-icon name="logo-github" class="ion"></ion-icon>
+                                <ion-icon name="logo-instagram" class="ion"></ion-icon>
+                            </div>
+                            <div class="back-border"></div>
+                        </div>
+                        {{-- Item End --}}
+                        {{-- Item Start --}}
+                        <div class="influencer_item">
+                            <figure class="d-block mx-auto mt-4 mb-3">
+                                <img src="{{ asset('assets/images/icons/influencer.png') }}" alt="">
+                                {{-- <img class="border_" src="{{ asset('assets/images/icons/influencer-border.png') }}"
+                                        alt=""> --}}
+                            </figure>
+                            <h4 class="text-white text-center">Ashim Rai</h4>
+                            <span class="d-flex justify-content-center mb-4">Web Developer
+                            </span>
+                            <p class="text-white text-center mb-4">A kiddo who uses Bootstrap and Laravel in web
+                                development.
+                                Currently
+                                playing around with
+                                design via Figma</p>
+                            <a href="mailto:ashim@gmial.com" class="d-block mx-auto mb-4"
+                                role="button">ashim@gmail.com</a>
+                            <div class="influencer-social">
+                                <ion-icon name="logo-twitter" class="ion"></ion-icon>
+                                <ion-icon name="logo-linkedin" class="ion"></ion-icon>
+                                <ion-icon name="logo-dribbble" class="ion"></ion-icon>
+                                <ion-icon name="logo-github" class="ion"></ion-icon>
+                                <ion-icon name="logo-instagram" class="ion"></ion-icon>
+                            </div>
+                            <div class="back-border"></div>
+                        </div>
+                        {{-- Item End --}}
+                        {{-- Item Start --}}
+                        <div class="influencer_item">
+                            <figure class="d-block mx-auto mt-4 mb-3">
+                                <img src="{{ asset('assets/images/icons/influencer.png') }}" alt="">
+                                {{-- <img class="border_" src="{{ asset('assets/images/icons/influencer-border.png') }}"
+                                        alt=""> --}}
+                            </figure>
+                            <h4 class="text-white text-center">Ashim Rai</h4>
+                            <span class="d-flex justify-content-center mb-4">Web Developer
+                            </span>
+                            <p class="text-white text-center mb-4">A kiddo who uses Bootstrap and Laravel in web
+                                development.
+                                Currently
+                                playing around with
+                                design via Figma</p>
+                            <a href="mailto:ashim@gmial.com" class="d-block mx-auto mb-4"
+                                role="button">ashim@gmail.com</a>
+                            <div class="influencer-social">
+                                <ion-icon name="logo-twitter" class="ion"></ion-icon>
+                                <ion-icon name="logo-linkedin" class="ion"></ion-icon>
+                                <ion-icon name="logo-dribbble" class="ion"></ion-icon>
+                                <ion-icon name="logo-github" class="ion"></ion-icon>
+                                <ion-icon name="logo-instagram" class="ion"></ion-icon>
+                            </div>
+                            <div class="back-border"></div>
+                        </div>
+                        {{-- Item End --}}
+                    </div>
+
+                </div>
+                {{-- arrow start --}}
+                <div class="d-flex gap-3 justify-content-center my-5 align-items-center">
+                    <button class="influence_prev slick-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+                        </svg>
+                    </button>
+                    <a class="view_all btn text-white btn-md" href="" role="button">view
+                        all</a>
+                    <button class="infleunce_next slick-arrow"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                        </svg>
+                    </button>
+                </div>
+                {{-- arrow end --}}
+            </div>
+        </div>
+    </div>
+    {{--  --}}
+    {{-- Ai Influencers End --}}
+    {{--  --}}
+
+
+
+    {{-- Subscriptions/List Fees Start --}}
+    <section class="subscription_sec mt-5">
+        <div class="subscription_sec_wrap">
+            <h2 class="text-uppercase text-white font-bold text-center">List Fees</h2>
+            <p class="text-white mx-auto text-center"></p>
+            <ul class="subscription_toggle nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-annual-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-annual" type="button" role="tab" aria-controls="pills-annual"
+                        aria-selected="true">Annual</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-monthly-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-monthly" type="button" role="tab" aria-controls="pills-monthly"
+                        aria-selected="false">Monthly</button>
+                </li>
+
+            </ul>
+
+            {{--  --}}
+            {{-- tab content start --}}
+            {{--  --}}
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-annual" role="tabpanel"
+                    aria-labelledby="pills-annual-tab">
+                    <div class="subscription_cards">
+                        <div class="subs_card d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="text-center">Personal</h3>
+                                <div class="d-flex justify-content-center subs_price">
+                                    <p>€ 12,99</p><span>/user</span>
+                                </div>
+                                <div class="hr_line my-4"></div>
+                            </div>
+                            <div>
+                                <ul class="services_check">
+                                    <li class="d-flex gap-2 align-items-center mb-3">
+                                        <figure class="mb-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                        </figure>
+                                        <span>Create a personal dashboard</span>
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center mb-3">
+                                        <figure class="mb-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                        </figure>
+                                        <span>Organise your note and workflows</span>
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center mb-3">
+                                        <figure class="mb-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                        </figure>
+                                        <span>5GB of space</span>
+                                    </li>
+                                </ul>
+                                <a href="" role="button" class="subs_btn d-block mx-auto">choose this plan
+                                    &#8594</a>
+                            </div>
+                        </div>
+                        <div class="subs_card special d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="subs_discount">-30%</div>
+                                <h3 class="text-center">Pro Plan</h3>
+                                <div class="d-flex justify-content-center subs_price">
+                                    <p>€ 29,99</p><span>/user</span>
+                                </div>
+                                <div class="hr_line my-4"></div>
+                            </div>
+                            <div>
+                                <ul class="services_check">
+                                    <li class="d-flex gap-2 align-items-center mb-3">
+                                        <figure class="mb-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                        </figure>
+                                        <span>All features in Personal</span>
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center mb-3">
+                                        <figure class="mb-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                        </figure>
+                                        <span>Unlock teams to create a work group</span>
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center mb-3">
+                                        <figure class="mb-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                        </figure>
+                                        <span>20GB of space</span>
+                                    </li>
+                                </ul>
+                                <a href="" role="button" class="subs_btn d-block mx-auto">choose this plan
+                                    &#8594</a>
+                            </div>
+                        </div>
+                        <div class="subs_card d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="text-center">Enterprise</h3>
+                                <div class="d-flex justify-content-center subs_price">
+                                    <p>€ 54,99</p><span>/user</span>
+                                </div>
+                                <div class="hr_line my-4"></div>
+                            </div>
+                            <div>
+                                <ul class="services_check">
+                                    <li class="d-flex gap-2 align-items-center mb-3">
+                                        <figure class="mb-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                        </figure>
+                                        <span>All features in pro plan</span>
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center mb-3">
+                                        <figure class="mb-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                        </figure>
+                                        <span>Unlock database to manage your data</span>
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center mb-3">
+                                        <figure class="mb-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                        </figure>
+                                        <span>500GB/5 shared space</span>
+                                    </li>
+                                </ul>
+                                <a href="" role="button" class="subs_btn d-block mx-auto">choose this plan
+                                    &#8594</a>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-7 mt-lg-0 mt-4">
-                    <div class="contact-right-area">
-                        <div class="row mb-4">
-                            <div class="col-lg-10">
-                                <h3 class="title mb-2">{{ __($contact->data_values->title) }}</h3>
-                                <p>{{ __($contact->data_values->short_details) }}</p>
+                <div class="tab-pane fade" id="pills-monthly" role="tabpanel" aria-labelledby="pills-monthly-tab">
+                    <div class="subscription_cards">
+                        <div class="subs_card d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="text-center">Personal</h3>
+                                <div class="d-flex justify-content-center subs_price">
+                                    <p>€ 12,99</p><span>/user</span>
+                                </div>
+                                <div class="hr_line my-4"></div>
+                            </div>
+                            <div>
+                                <ul class="services_check">
+                                    <li class="d-flex gap-2 align-items-center mb-3">
+                                        <figure class="mb-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                        </figure>
+                                        <span>Create a personal dashboard</span>
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center mb-3">
+                                        <figure class="mb-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                        </figure>
+                                        <span>Organise your note and workflows</span>
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center mb-3">
+                                        <figure class="mb-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                        </figure>
+                                        <span>5GB of space</span>
+                                    </li>
+                                </ul>
+                                <a href="" role="button" class="subs_btn d-block mx-auto">choose this plan
+                                    &#8594</a>
                             </div>
                         </div>
-                        <form method="POST" class="verify-gcaptcha">
-                            @csrf
-                            <div class="row gy-4">
-                                <div class="col-lg-6">
-                                    <label>@lang('Full Name')</label>
-                                    <div class="custom-icon-field">
-                                        <input type="text" name="name" class="form--control"
-                                            value="{{ auth()->user() ? auth()->user()->fullname : old('name') }}"
-                                            @if (auth()->user()) readonly @endif required>
-                                        <i class="fas fa-user-alt"></i>
-                                    </div>
+                        <div class="subs_card special d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="subs_discount">-30%</div>
+                                <h3 class="text-center">Pro Plan</h3>
+                                <div class="d-flex justify-content-center subs_price">
+                                    <p>€ 29,99</p><span>/user</span>
                                 </div>
-                                <div class="col-lg-6">
-                                    <label>@lang('Email Address')</label>
-                                    <div class="custom-icon-field">
-                                        <input type="email" name="email" class="form--control"
-                                            value="@if (auth()->user()) {{ auth()->user()->email }} @else {{ old('email') }} @endif"
-                                            @if (auth()->user()) readonly @endif required>
-                                        <i class="fas fa-envelope"></i>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <label>@lang('Subject')</label>
-                                    <div class="custom-icon-field">
-                                        <input type="text" name="subject" class="form--control"
-                                            value="{{ old('subject') }}" required>
-                                        <i class="fas fa-envelope"></i>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <label>@lang('Message')</label>
-                                    <div class="custom-icon-field">
-                                        <textarea name="message" class="form--control">{{ old('message') }}</textarea>
-                                        <i class="fas fa-comment-alt"></i>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <x-captcha></x-captcha>
-                                </div>
-                                <div class="col-lg-12">
-                                    <button type="submit" class="btn  w-100">@lang('Submit')</button>
-                                </div>
+                                <div class="hr_line my-4"></div>
                             </div>
-                        </form>
+                            <div>
+                                <ul class="services_check">
+                                    <li class="d-flex gap-2 align-items-center mb-3">
+                                        <figure class="mb-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                        </figure>
+                                        <span>All features in Personal</span>
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center mb-3">
+                                        <figure class="mb-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                        </figure>
+                                        <span>Unlock teams to create a work group</span>
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center mb-3">
+                                        <figure class="mb-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                        </figure>
+                                        <span>20GB of space</span>
+                                    </li>
+                                </ul>
+                                <a href="" role="button" class="subs_btn d-block mx-auto">choose this plan
+                                    &#8594</a>
+                            </div>
+                        </div>
+                        <div class="subs_card d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="text-center">Enterprise</h3>
+                                <div class="d-flex justify-content-center subs_price">
+                                    <p>€ 54,99</p><span>/user</span>
+                                </div>
+                                <div class="hr_line my-4"></div>
+                            </div>
+                            <div>
+                                <ul class="services_check">
+                                    <li class="d-flex gap-2 align-items-center mb-3">
+                                        <figure class="mb-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                        </figure>
+                                        <span>All features in pro plan</span>
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center mb-3">
+                                        <figure class="mb-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                        </figure>
+                                        <span>Unlock database to manage your data</span>
+                                    </li>
+                                    <li class="d-flex gap-2 align-items-center mb-3">
+                                        <figure class="mb-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                            </svg>
+                                        </figure>
+                                        <span>500GB/5 shared space</span>
+                                    </li>
+                                </ul>
+                                <a href="" role="button" class="subs_btn d-block mx-auto">choose this plan
+                                    &#8594</a>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
+            {{--  --}}
+            {{-- tab content end --}}
+            {{--  --}}
         </div>
     </section>
+    {{-- Subscriptions/List Fees End --}}
 
-    <div class="map-area">
-        <iframe src = "{{ $contact->data_values->map_url }}"></iframe>
+    {{-- Top 3 postions start --}}
+    <section class="top_postions my-5 py-5">
+        <h2 class="text-uppercase text-white font-bold text-center">Top 3 positions</h2>
+        <div class="subscription_cards">
+            <div class="subs_card d-flex flex-column justify-content-between">
+                <div>
+                    <h3 class="text-center">Personal</h3>
+                    <div class="d-flex justify-content-center subs_price">
+                        <p>€ 12,99</p><span>/user</span>
+                    </div>
+                    <div class="hr_line my-4"></div>
+                </div>
+                <div>
+                    <ul class="services_check">
+                        <li class="d-flex gap-2 align-items-center mb-3">
+                            <figure class="mb-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                            </figure>
+                            <span>Create a personal dashboard</span>
+                        </li>
+                        <li class="d-flex gap-2 align-items-center mb-3">
+                            <figure class="mb-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                            </figure>
+                            <span>Organise your note and workflows</span>
+                        </li>
+                        <li class="d-flex gap-2 align-items-center mb-3">
+                            <figure class="mb-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                            </figure>
+                            <span>5GB of space</span>
+                        </li>
+                    </ul>
+                    <a href="" role="button" class="subs_btn d-block mx-auto">choose this plan
+                        &#8594</a>
+                </div>
+            </div>
+            <div class="subs_card special d-flex flex-column justify-content-between">
+                <div>
+                    <div class="subs_discount">-30%</div>
+                    <h3 class="text-center">Pro Plan</h3>
+                    <div class="d-flex justify-content-center subs_price">
+                        <p>€ 29,99</p><span>/user</span>
+                    </div>
+                    <div class="hr_line my-4"></div>
+                </div>
+                <div>
+                    <ul class="services_check">
+                        <li class="d-flex gap-2 align-items-center mb-3">
+                            <figure class="mb-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                            </figure>
+                            <span>All features in Personal</span>
+                        </li>
+                        <li class="d-flex gap-2 align-items-center mb-3">
+                            <figure class="mb-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                            </figure>
+                            <span>Unlock teams to create a work group</span>
+                        </li>
+                        <li class="d-flex gap-2 align-items-center mb-3">
+                            <figure class="mb-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                            </figure>
+                            <span>20GB of space</span>
+                        </li>
+                    </ul>
+                    <a href="" role="button" class="subs_btn d-block mx-auto">choose this plan
+                        &#8594</a>
+                </div>
+            </div>
+            <div class="subs_card d-flex flex-column justify-content-between">
+                <div>
+                    <h3 class="text-center">Enterprise</h3>
+                    <div class="d-flex justify-content-center subs_price">
+                        <p>€ 54,99</p><span>/user</span>
+                    </div>
+                    <div class="hr_line my-4"></div>
+                </div>
+                <div>
+                    <ul class="services_check">
+                        <li class="d-flex gap-2 align-items-center mb-3">
+                            <figure class="mb-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                            </figure>
+                            <span>All features in pro plan</span>
+                        </li>
+                        <li class="d-flex gap-2 align-items-center mb-3">
+                            <figure class="mb-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                            </figure>
+                            <span>Unlock database to manage your data</span>
+                        </li>
+                        <li class="d-flex gap-2 align-items-center mb-3">
+                            <figure class="mb-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                            </figure>
+                            <span>500GB/5 shared space</span>
+                        </li>
+                    </ul>
+                    <a href="" role="button" class="subs_btn d-block mx-auto">choose this plan
+                        &#8594</a>
+                </div>
+
+            </div>
+        </div>
+
+        <a role="button" href="{{ '/contact' }}"
+            class="upload btn text-white btn-md mx-auto text-center d-block">upload now</a>
+        <p class="mt-3 text-center fw-light text-white mx-auto" style="max-width: 45ch">AFTER SUBMISSSION WE WILL
+            CHECK AND
+            TEST YOUR TOOL THEN
+            WE WILL PUBLISH IT</p>
+    </section>
+    {{-- Top 3 postions End --}}
+
+
+    <div class="faq_sec d-none d-md-block pb-5 mt-5">
+        <div class="faq_wrap">
+            <div class="container">
+                <h2 class="text-white text-start mb-5 pb-2">Frequerntly Asked Questions</h2>
+                <div class="row align-items-start">
+                    {{-- Faq Question Start --}}
+                    <div class="col-lg-6">
+                        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
+                            aria-orientation="vertical">
+                            <button class="nav-link active d-flex justify-content-between align-items-center"
+                                id="v-pills-one-tab" data-bs-toggle="pill" data-bs-target="#v-pills-one" type="button"
+                                role="tab" aria-controls="v-pills-one" aria-selected="true">
+                                <div class="d-flex align-items-center">
+                                    <div class="circle me-2"></div>
+                                    <p>What is a Payment Gateway?</p>
+                                </div>
+                                <span><ion-icon name="chevron-forward-outline"></ion-icon></span>
+                            </button>
+                            <button class="nav-link d-flex justify-content-between align-items-center"
+                                id="v-pills-two-tab" data-bs-toggle="pill" data-bs-target="#v-pills-two" type="button"
+                                role="tab" aria-controls="v-pills-two" aria-selected="false">
+                                <div class="d-flex align-items-center">
+                                    <div class="circle me-2"></div>
+                                    <p>Do I need to pay to instapay even when there is no transaction going
+                                        on
+                                        in my business?</p>
+                                </div>
+                                <span><ion-icon name="chevron-forward-outline"></ion-icon></span>
+                            </button>
+                            <button class="nav-link d-flex justify-content-between align-items-center"
+                                id="v-pills-three-tab" data-bs-toggle="pill" data-bs-target="#v-pills-three"
+                                type="button" role="tab" aria-controls="v-pills-three" aria-selected="false">
+
+                                <div class="d-flex align-items-center">
+                                    <div class="circle me-2"></div>
+                                    <p>What platforms does instapay payment
+                                        gateway support?</p>
+                                </div>
+                                <span><ion-icon name="chevron-forward-outline"></ion-icon></span>
+                            </button>
+                            <button class="nav-link d-flex justify-content-between align-items-center"
+                                id="v-pills-four-tab" data-bs-toggle="pill" data-bs-target="#v-pills-four"
+                                type="button" role="tab" aria-controls="v-pills-four" aria-selected="false">
+                                <div class="d-flex align-items-center">
+                                    <div class="circle me-2"></div>
+                                    <p>Does instapay provide international
+                                        payments support?</p>
+                                </div>
+                                <span><ion-icon name="chevron-forward-outline"></ion-icon></span>
+                            </button>
+                            <button class="nav-link d-flex justify-content-between align-items-center"
+                                id="v-pills-five-tab" data-bs-toggle="pill" data-bs-target="#v-pills-five"
+                                type="button" role="tab" aria-controls="v-pills-five" aria-selected="false">
+                                <div class="d-flex align-items-center">
+                                    <div class="circle me-2"></div>
+                                    <p> Is there any setup fee or annual
+                                        maintainace fee that I need to pay
+                                        regularly?</p>
+                                </div>
+                                <span><ion-icon name="chevron-forward-outline"></ion-icon></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    {{-- Faq Question End --}}
+
+                    {{-- Faq Answer start --}}
+                    <div class="col-lg-6">
+                        <div class="tab-content" id="v-pills-tabContent">
+                            <div class="tab-pane fade show active" id="v-pills-one" role="tabpanel"
+                                aria-labelledby="v-pills-one-tab">
+                                <h4 class="text-white text-center fw-bold">What is a Payment Gateway?</h4>
+                                <p class="mt-5 text-white">A payment gateway is an ecommerce service that processes online
+                                    payments
+                                    for
+                                    online as well as offline businesses. Payment gateways help accept payments by
+                                    transferring
+                                    key information from their merchant websites to issuing banks, card associations and
+                                    online
+                                    wallet players.</p>
+                                <p class="text-white mt-3">
+                                    Payment gateways play a vital role in the online transaction process, which is the
+                                    realisation of value, and hence are seen as an important pillar of ecommerce.
+                                </p>
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-two" role="tabpanel"
+                                aria-labelledby="v-pills-two-tab">
+                                two</div>
+                            <div class="tab-pane fade" id="v-pills-three" role="tabpanel"
+                                aria-labelledby="v-pills-three-tab">three</div>
+                            <div class="tab-pane fade" id="v-pills-four" role="tabpanel"
+                                aria-labelledby="v-pills-four-tab">
+                                four</div>
+                            <div class="tab-pane fade" id="v-pills-five" role="tabpanel"
+                                aria-labelledby="v-pills-five-tab">
+                                five</div>
+                        </div>
+                    </div>
+
+                    {{-- Fa1 Answer End --}}
+                </div>
+            </div>
+        </div>
     </div>
-
-    @if ($sections->secs != null)
-        @foreach (json_decode($sections->secs) as $sec)
-            @include($activeTemplate . 'sections.' . $sec)
-        @endforeach
-    @endif
 @endsection
