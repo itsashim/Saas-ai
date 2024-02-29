@@ -4155,6 +4155,83 @@ label {
   border-color: #e2d784;
 }
 
+/*  */
+/* Coupons list Start / Tool list  */
+/*  */
+
+.list_tools_sec {
+  padding: 0 5%;
+}
+
+.list_tools_sec_wrap {
+  border: 2px solid #ffffff;
+  border-radius: 15px;
+  max-width: 1200px;
+}
+.list_tools_sec_wrap .coupon {
+  position: relative;
+  /* padding: 1rem; */
+  /* border-bottom: 2px solid white; */
+}
+
+.list_tools_sec_wrap .coupon .coupon_tag {
+  font-size: 0.6rem;
+  background-color: #05ff00;
+  border-radius: 100px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #292929;
+  position: absolute;
+  top: 0;
+  rotate: -45deg;
+  transform: translate(-25px, -13px);
+  padding: 0.1rem 0.6rem;
+}
+
+.coupon_des span {
+  font-size: 0.8rem;
+  color: white;
+  font-weight: 300;
+}
+
+.coupon_des a {
+  font-size: 0.8rem;
+  color: white;
+  background-image: linear-gradient(
+    90deg,
+    rgba(37, 144, 255, 1) 5%,
+    rgba(145, 12, 192, 1) 81%
+  ) !important;
+  border-radius: 100px;
+  padding: 0.5rem 1rem;
+  min-width: 150px;
+  text-align: center;
+}
+
+.coupon_img figure {
+  aspect-ratio: 3/2;
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.coupon_img figure img {
+  width: 100%;
+}
+
+.coupon_seo figure {
+  width: 140px;
+}
+
+.coupon_con p {
+  max-width: 55ch;
+  font-size: 0.8rem;
+}
+
+/*  */
+/* Coupons list End / Tool list  */
+/*  */
+
 /* popular store section css start */
 .store-item {
   padding: 1.875rem 1.25rem;
@@ -5092,7 +5169,7 @@ div.dashboard-table-card .card-header {
 /* Types tabs start */
 .types_tab {
   width: 100%;
-  max-width: 800px;
+  max-width: 882px;
   margin: 0 auto;
   background-color: #101111;
 }
