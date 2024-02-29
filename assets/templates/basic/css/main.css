@@ -5834,3 +5834,71 @@ div.dashboard-table-card .card-header {
 /*  */
 /* faq section End */
 /*  */
+
+/*  */
+/* tool_compare_sec Section start */
+/*  */
+
+.tool_compare_sec h6 {
+  color: #258ffe;
+  text-align: center;
+}
+
+.tool_compare_sec_wrap {
+  max-width: 68ch;
+}
+
+.tool_compare_sec h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  margin-inline: auto;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  max-width: 30ch;
+}
+.tool_compare_sec h2:first-of-type {
+  margin-top: 0.7rem;
+}
+
+.tool_compare_sec h4 {
+  margin: 1rem 0;
+  margin-top: 2rem;
+  font-size: 24px;
+  color: #910cc0;
+  font-weight: 600;
+}
+
+.tool_compare_sec h5 {
+  color: white;
+  margin: 1rem auto;
+  margin-top: 2rem;
+}
+
+.tool_compare_sec p,
+li {
+  font-size: 18px;
+  margin-bottom: 0.7rem;
+  color: white;
+}
+
+.tool_compare_sec ul {
+  padding: 0;
+  list-style: decimal;
+}
+
+.tool_compare_sec a {
+  padding: 0.7rem 1rem;
+  border: 1px solid white;
+  border-radius: 100px;
+  color: white;
+  max-width: max-content;
+  margin: 1.4rem auto;
+}
+
+.tool_compare_sec a:hover {
+  color: white;
+}
+/*  */
+/* tool_compare_sec section End */
+/*  */
