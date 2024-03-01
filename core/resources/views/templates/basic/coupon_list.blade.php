@@ -50,10 +50,10 @@
     {{-- List of Tools Start --}}
     <section class="list_tools_sec py-5 ">
         <div class="list_tools_sec_wrap mx-auto pb-4">
-            <div
-                class="coupon d-flex flex-column flex-md-row justify-content-between p-4 gap-4 align-items-center align-items-md-start">
+            @forelse($coupons as $coupon)
+            <div class="coupon d-flex flex-column flex-md-row justify-content-between p-4 gap-4 align-items-center align-items-md-start">
                 <div class="coupon_img">
-                    <figure><img src="https://check.hostingpro.bond/assets/images/coupon/65afa50d767151706009869.png"
+                    <figure><img src="{{ getImage(getFilePath('coupon').'/'. $coupon->image,getFileSize('coupon')) }}"
                             alt=""></figure>
                 </div>
                 <div class="coupon_seo">
@@ -63,25 +63,32 @@
                     </figure>
                 </div>
                 <div class="coupon_con">
-                    <h6 class="fw-bold text-white">Surfer</h6>
+                    <h6 class="fw-bold text-white">{{ __($coupon->title) }}</h6>
                     <p class="text-white">
-                        Surfer is one of the absolute best SEO tools that will help write amazing SEO-optimized content. It
-                        will show you what you need to include in your articles, best keywords, current SEO score and how
-                        to... </p>
+                        {{ Str::limit(strip_tags($coupon->description),120)}}
+                    </p>
                 </div>
                 <div class="coupon_des">
-                    <span class="mb-2">from $44/mo</span>
-                    <a role="button" class="" href="">Visit tool</a>
+                    <span class="mb-2">$ {{ $coupon->price }}</span>
+                    <a role="button" class="" href="{{ route('details', ['id' => $coupon->id]) }}">Visit tool</a>
                 </div>
 
                 <div class="coupon_tag">
-                    Free
+                    @if ($coupon->free_trail == 1)
+                        <span class=" price_free">
+                            Free
+                        </span>
+                    @else
+                        <span></span>
+                    @endif
                 </div>
 
 
             </div>
+            
             <div class="hr_line bg-white"></div>
-            <div
+            @endforeach
+            {{-- <div
                 class="coupon d-flex flex-column flex-md-row justify-content-between p-4 gap-4 align-items-center align-items-md-start">
                 <div class="coupon_img">
                     <figure><img src="https://check.hostingpro.bond/assets/images/coupon/65afa50d767151706009869.png"
@@ -110,7 +117,7 @@
                 </div>
 
 
-            </div>
+            </div> --}}
 
         </div>
     </section>

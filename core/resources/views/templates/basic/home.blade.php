@@ -36,10 +36,15 @@
                 <div class="hero_search ">
                     <div class="magnifying_glass"><img src="{{ asset('assets/images/icons/search.png') }}" alt="">
                     </div>
-                    <input type="text" placeholder="Serach AI tools by any keywords" />
-                    <button class="search_icon">
-                        Search
-                    </button>
+                    <form action="{{ route('coupon.search') }}" class="header-search d-flex" style="width: 100%">
+                        <input type="search" name="search_key" value="{{ request()->search_key }}"
+                            class="header-search__input" placeholder="@lang('Search')">
+                        <button class="search_icon" type="submit">
+                            Search
+                        </button>
+                    </form>
+                    {{-- <input type="text" placeholder="Serach AI tools by any keywords" /> --}}
+
                 </div>
             </div>
 

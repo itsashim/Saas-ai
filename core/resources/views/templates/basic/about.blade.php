@@ -54,7 +54,7 @@
                                 for cutting-edge AI tools.
                                 Join us and revolutionize your workflow!"</p>
                         </div>
-                        <div class="about_subcard bg-none">
+                        <div class="about_subcard bg-none d-none d-md-block">
                             <img src="{{ asset('assets/images/icons/foundry.png') }}" alt="">
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                                 forefront of innovation.Join us on this journey of discovery and
                                 empowerment!"</p>
                         </div>
-                        <div class="about_subcard about_bg">
+                        <div class="about_subcard about_bg d-none d-md-block">
                             <div class="wrap p-4">
                                 <h2 class="mb-0">Blog</h2>
                                 <span>Top 10 Ai Tool in 2024</span>
@@ -85,9 +85,10 @@
                 <div class="col-lg-4">
                     <div class="con justify-content-center ">
                         <div class="about_card row">
-                            <div class="col-12 col-sm-6  col-lg-12">
+                            <div class="col-12 col-md-6  col-lg-12">
                                 <h6 class="text-center text-sm-start"> Only 11 Tools Per Niche</h6>
-                                <p class="text-center text-sm-start">"At our AI Tool Directory, we believe in quality over
+                                <p class="text-center text-sm-start mx-auto mx-sm-0">"At our AI Tool Directory, we believe
+                                    in quality over
                                     quantity. That's why we feature only the top 11 tools
                                     per niche. By carefully curating this selection, we ensure
                                     that you get access to the best-in-class solutions
@@ -95,7 +96,7 @@
                                     to providing you with the most effective tools for your
                                     needs."</p>
                             </div>
-                            <div class="col-12 col-sm-6  col-lg-12">
+                            <div class="col-12 col-sm-6  col-lg-12 d-none d-md-block">
                                 <figure>
                                     <img src="{{ asset('assets/images/icons/top-11.jpeg') }}" alt="">
                                 </figure>
@@ -106,15 +107,17 @@
                 <div class="col-lg-4">
                     <div class="con  justify-content-center ">
                         <div class="about_card row">
-                            <div class="col-12 col-sm-6  col-lg-12">
+                            <div class="col-12 col-md-6  col-lg-12 d-none d-md-block">
                                 <figure>
-                                    <img src="{{ asset('assets/images/icons/basic-blocks.png') }}" alt="">
+                                    <img class="mx-auto mx-sm-0" src="{{ asset('assets/images/icons/basic-blocks.png') }}"
+                                        alt="">
                                 </figure>
                             </div>
-                            <div class="col-12 col-sm-6  col-lg-12">
+                            <div class="col-12 col-md-6  col-lg-12 ">
                                 <h6 class="text-center text-sm-start">Ai influencers With Us</h6>
 
-                                <p class="text-center text-sm-start">Choose from a wide selection of blocks. Use primitive
+                                <p class="text-center text-sm-start mx-auto mx-sm-0 d-block">Choose from a wide selection of
+                                    blocks. Use primitive
                                     blocks-text, images, dates, etc or
                                     more
                                     complex ones collections, components and more.
@@ -125,16 +128,17 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="con justify-content-center ">
-                        <div class="about_card row" style="width: 100%">
-                            <div class="col-12 col-sm-6  col-lg-12">
+                        <div class="about_card row">
+                            <div class="col-12 col-md-6  col-lg-12">
                                 <h6 class="text-center text-sm-start">Customer Trust</h6>
 
-                                <p class="text-center text-sm-start">See what you're about to commit across your whole
+                                <p class="text-center text-sm-start mx-auto mx-sm-0 d-block">See what you're about to commit
+                                    across your whole
                                     repository with the diff view. Discard
                                     changes if you've made a mistake. Learn more
                                 </p>
                             </div>
-                            <div class="col-12 col-sm-6 col-lg-12">
+                            <div class="col-12 col-sm-6 col-lg-12 d-none d-md-block">
                                 <figure>
                                     <img src="{{ asset('assets/images/icons/customer-support.jpeg') }}" alt="">
                                 </figure>
@@ -145,10 +149,11 @@
             </div>
             <div class="about_footer ">
                 <div
-                    class="wrap d-flex flex-wrap py-2 px-4 justify-content-center justify-content-sm-between align-items-center">
+                    class="wrap d-flex flex-wrap py-2 px-4 justify-content-center justify-content-sm-between align-items-center gap-3">
                     <div class="d-flex align-items-center gap-3">
-                        <h4 class="text-white">Join Our Community Today</h4>
-                        <img src="{{ asset('assets/images/icons/ai-favicon.png') }}" alt="">
+                        <h4 class="text-white text-center">Join Our Community Today</h4>
+                        <img class="d-none d-sm-block" src="{{ asset('assets/images/icons/ai-favicon.png') }}"
+                            alt="">
                     </div>
                     <div class="about_social-links ">
                         <div class="wrap d-flex gap-3">

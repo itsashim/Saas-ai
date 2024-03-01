@@ -3945,7 +3945,7 @@ label {
 }
 
 .about_footer {
-  margin-top: 1.3rem;
+  margin-top: 3.3rem;
   background: linear-gradient(
     rgba(37, 144, 255, 1) 5%,
     rgba(145, 12, 192, 1) 81%
@@ -4186,6 +4186,12 @@ label {
   rotate: -45deg;
   transform: translate(-25px, -13px);
   padding: 0.1rem 0.6rem;
+}
+
+@media (max-width: 767px) {
+  .list_tools_sec_wrap .coupon .coupon_tag {
+    transform: translate(-101px, -85px);
+  }
 }
 
 .coupon_des span {
@@ -5120,25 +5126,20 @@ div.dashboard-table-card .card-header {
   padding: 1px;
   width: min(100% - 3rem, 600px);
   border-radius: 100px;
+  z-index: 999;
 }
 .magnifying_glass {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 4rem;
-  height: 2.3rem;
+  width: 3.4rem;
+  height: 3rem;
   background: linear-gradient(
     90deg,
     rgba(37, 144, 255, 1) 5%,
     rgba(145, 12, 192, 1) 81%
   );
   border-radius: 100%;
-}
-
-@media (max-width: 460px) {
-  .magnifying_glass {
-    width: 7rem;
-  }
 }
 
 /* .magnifying_glass img {
@@ -5172,6 +5173,7 @@ div.dashboard-table-card .card-header {
   max-width: 882px;
   margin: 0 auto;
   background-color: #101111;
+  z-index: 999;
 }
 .tab_wrap {
   padding: 1px;
@@ -5348,8 +5350,7 @@ div.dashboard-table-card .card-header {
 
 .featured {
   background-color: #101111;
-  padding: 2rem 2%;
-  padding-top: 0;
+  padding: 1.5rem 2%;
 }
 
 .featured .btn {
@@ -5876,14 +5877,14 @@ div.dashboard-table-card .card-header {
 }
 
 .tool_compare_sec p,
-li {
+.tool_compare_sec li {
   font-size: 18px;
   margin-bottom: 0.7rem;
   color: white;
 }
 
 .tool_compare_sec ul {
-  padding: 0;
+  padding: 1rem;
   list-style: decimal;
 }
 

@@ -23,12 +23,12 @@
                                                 </div>
                                             </div>
                                             <div class="avatar-edit">
-                                                <input type="file" class="profilePicUpload" name="image" id="profilePicUpload1"
-                                                    accept=".png, .jpg, .jpeg">
+                                                <input type="file" class="profilePicUpload" name="image"
+                                                    id="profilePicUpload1" accept=".png, .jpg, .jpeg">
                                                 <label for="profilePicUpload1" class="bg--success">@lang('Tools Image')</label>
                                                 <small class="mt-2 text-facebook">@lang('Supported files'): <b>@lang('jpeg'),
                                                         @lang('jpg'), @lang('png').</b> @lang('Image will be resized into
-                                                    300x200px') </small>
+                                                                                                                                                                                                                                                                                                                                                                                                    300x200px') </small>
                                             </div>
                                         </div>
                                     </div>
@@ -48,17 +48,18 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-control-label">@lang('Category')</label>
-                                    <select name="category_id" class="form-control" required>
+                                    <select name="category_id[]" class="form-control" required multiple>
                                         <option hidden>@lang('Select One')</option>
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}"
-                                                {{ @$coupon->category_id == $category->id ? 'selected' : '' }}>
-                                                {{ __($category->name) }}</option>
+                                                {{ in_array($category->id, (array) @$selectedCategories) ? 'selected' : '' }}>
+                                                {{ __($category->name) }}
+                                            </option>
                                         @endforeach
                                     </select>
                                 </div>
                             </div>
-                    {{--    <div class="col-md-6">
+                            {{--    <div class="col-md-6">
                                 <div class="form-group">
                                     <label>@lang('SKU Code')</label>
                                     <input class="form-control" type="text" name="coupon_code"
@@ -78,9 +79,11 @@
                                     <label>@lang('Owner')</label>
                                     <!--<select name="store_id" class="form-control store-list select2-basic">-->
                                     <!--    <option value="" hidden>@lang('Select One')</option>-->
-                                    <!--    @foreach ($stores as $store)-->
+                                    <!--    @foreach ($stores as $store)
+    -->
                                     <!--        <option value="{{ $store->id }}" {{ $coupon ? ($store->id == $coupon->store_id ? 'selected' : '') : '' }}>{{ $store->name }}</option>-->
-                                    <!--    @endforeach-->
+                                    <!--
+    @endforeach-->
                                     <!--</select>-->
                                     <input type="hidden" name="store" value="Admin">
                                     <input type="hidden" name="store_id" value="1">
@@ -98,24 +101,27 @@
                                     <label>@lang('Status')</label>
                                     @if ($coupon)
                                         @if (@$coupon->status == 0)
-                                            <input type="checkbox" data-width="100%" data-onstyle="-warning" data-offstyle="-danger"
-                                                data-bs-toggle="toggle" data-off="@lang('Pending')" disabled>
+                                            <input type="checkbox" data-width="100%" data-onstyle="-warning"
+                                                data-offstyle="-danger" data-bs-toggle="toggle"
+                                                data-off="@lang('Pending')" disabled>
                                         @elseif (@$coupon->status == 3)
-                                            <input type="checkbox" data-width="100%" data-onstyle="-danger" data-offstyle="-danger"
-                                                data-bs-toggle="toggle" data-off="@lang('Rejected')" disabled>
-
+                                            <input type="checkbox" data-width="100%" data-onstyle="-danger"
+                                                data-offstyle="-danger" data-bs-toggle="toggle"
+                                                data-off="@lang('Rejected')" disabled>
                                         @else
-                                            <input type="checkbox" data-width="100%" data-onstyle="-success" data-offstyle="-danger"
-                                                data-bs-toggle="toggle" data-on="@lang('Active')" data-off="@lang('Inactive')" name="status"
+                                            <input type="checkbox" data-width="100%" data-onstyle="-success"
+                                                data-offstyle="-danger" data-bs-toggle="toggle" data-on="@lang('Active')"
+                                                data-off="@lang('Inactive')" name="status"
                                                 @if (@$coupon->status == 1) checked @endif>
                                         @endif
                                     @else
-                                        <input type="checkbox" data-width="100%" data-onstyle="-success" data-offstyle="-danger"
-                                        data-bs-toggle="toggle" data-on="@lang('Approve')" checked disabled>
+                                        <input type="checkbox" data-width="100%" data-onstyle="-success"
+                                            data-offstyle="-danger" data-bs-toggle="toggle" data-on="@lang('Approve')"
+                                            checked disabled>
                                     @endif
                                 </div>
                             </div>
-                  {{--      <div class="col-md-6">
+                            {{--      <div class="col-md-6">
                                 <div class="form-group">
                                     <label>@lang('Cashback')</label>
                                     <div class="input-group">
@@ -134,24 +140,27 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>@lang('Trending Tools')</label>
-                                    <input type="checkbox" data-width="100%" data-onstyle="-success" data-offstyle="-danger"
-                                        data-bs-toggle="toggle" data-on="@lang('Yes')" data-off="@lang('No')" name="today_deal"
+                                    <input type="checkbox" data-width="100%" data-onstyle="-success"
+                                        data-offstyle="-danger" data-bs-toggle="toggle" data-on="@lang('Yes')"
+                                        data-off="@lang('No')" name="today_deal"
                                         @if (@$coupon->today_deal) checked @endif>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>@lang('Featured Tools')</label>
-                                    <input type="checkbox" data-width="100%" data-onstyle="-success" data-offstyle="-danger"
-                                        data-bs-toggle="toggle" data-on="@lang('Yes')" data-off="@lang('No')" name="top_deal"
+                                    <input type="checkbox" data-width="100%" data-onstyle="-success"
+                                        data-offstyle="-danger" data-bs-toggle="toggle" data-on="@lang('Yes')"
+                                        data-off="@lang('No')" name="top_deal"
                                         @if (@$coupon->top_deal) checked @endif>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>@lang('Free Trial')</label>
-                                    <input type="checkbox" data-width="100%" data-onstyle="-success" data-offstyle="-danger"
-                                        data-bs-toggle="toggle" data-on="@lang('Yes')" data-off="@lang('No')" name="free_trail"
+                                    <input type="checkbox" data-width="100%" data-onstyle="-success"
+                                        data-offstyle="-danger" data-bs-toggle="toggle" data-on="@lang('Yes')"
+                                        data-off="@lang('No')" name="free_trail"
                                         @if (@$coupon->free_trail) checked @endif>
                                 </div>
                             </div>
@@ -191,8 +200,10 @@
                         <div class="form-group">
                             <label>@lang('Select Coupon Status')</label>
                             <select name="action" class="form-control" required>
-                                <option value="1" {{ @$coupon->status == 1 ? 'selected' : '' }}>@lang('Approve')</option>
-                                <option value="3" {{ @$coupon->status == 3 ? 'selected' : '' }}>@lang('Reject')</option>
+                                <option value="1" {{ @$coupon->status == 1 ? 'selected' : '' }}>@lang('Approve')
+                                </option>
+                                <option value="3" {{ @$coupon->status == 3 ? 'selected' : '' }}>@lang('Reject')
+                                </option>
                             </select>
                         </div>
                         <div class="form-group reason">
@@ -280,46 +291,46 @@
             });
 
             $('.store-list').select2({
-            ajax: {
-                url: "{{ route('admin.store.list') }}",
-                type: "get",
-                dataType: 'json',
-                delay: 1000,
-                data: function (params) {
-                    return {
-                        search: params.term,
-                        page: params.page,
-                        rows: 5,
-                    };
+                ajax: {
+                    url: "{{ route('admin.store.list') }}",
+                    type: "get",
+                    dataType: 'json',
+                    delay: 1000,
+                    data: function(params) {
+                        return {
+                            search: params.term,
+                            page: params.page,
+                            rows: 5,
+                        };
+                    },
+                    processResults: function(response, params) {
+                        params.page = params.page || 1;
+                        return {
+                            results: response,
+                            pagination: {
+                                more: params.page < response.length
+                            }
+                        };
+                    },
+                    cache: false
                 },
-                processResults: function (response, params) {
-                    params.page = params.page || 1;
-                    return {
-                        results: response,
-                        pagination: {
-                            more: params.page < response.length
-                        }
-                    };
-                },
-                cache: false
-            },
-            dropdownParent: $('.card-body')
-        });
+                dropdownParent: $('.card-body')
+            });
 
-        $('[name=action]').on('change', function(){
-            var action = $('[name=action]').val();
-            if(action == 3){
-                $('.reason').show();
-            }else{
-                $('.reason').hide();
-            }
-        }).change();
+            $('[name=action]').on('change', function() {
+                var action = $('[name=action]').val();
+                if (action == 3) {
+                    $('.reason').show();
+                } else {
+                    $('.reason').hide();
+                }
+            }).change();
 
-        $(document).on('click','.actionBtn', function () {
-            var modal   = $('#actionModal');
-            let data    = $(this).data();
-            modal.modal('show');
-        });
+            $(document).on('click', '.actionBtn', function() {
+                var modal = $('#actionModal');
+                let data = $(this).data();
+                modal.modal('show');
+            });
 
         })(jQuery);
     </script>

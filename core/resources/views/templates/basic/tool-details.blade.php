@@ -41,12 +41,13 @@
         }
 
         .square {
-            max-width: 16rem;
-            width: 40%;
-            border: 3px solid white;
-            border-radius: 50px;
+            max-width: 20rem;
+            width: 100%;
+            border: 2px solid white;
+            border-radius: 10px;
             overflow: hidden;
         }
+
 
         .square img {
             width: 100%;
@@ -118,16 +119,16 @@
             <!-- Tool Side Left Start -->
             <div class=" col-lg-7 p-4">
                 <div class="left ms-lg-auto">
-                    <h3>REimagineHome AI</h3>
-                    <p>Swift, easy to use, zero-learning-curve AI for Virtual Staging, Remodling, Landscaping, Interior
-                        Designing, & beyond - tailored for Realtors, Marketers, Photographers, Developers, & Interior
-                        Designers.
-                    </p>
+                    <h3>{{ __($product->title) }}</h3>
+                    {{-- <p>Swift, easy to use, zero-learning-curve AI for Virtual Staging, Remodling, Landscaping, Interior
+                            Designing, & beyond - tailored for Realtors, Marketers, Photographers, Developers, & Interior
+                            Designers.
+                        </p> --}}
 
                     <div class="d-flex justify-content-between my-5">
                         <div>
                             <p class="text_gray mb-0">Published on</p>
-                            <p>Dec 20, 2023</p>
+                            <p>{{ showDateTime($product->ending_date) }}</p>
                         </div>
                         <div class="social_links d-flex gap-3">
                             <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
@@ -147,43 +148,12 @@
                         </div>
                     </div>
                     <div class="square mb-5">
-                        <img class="" src="{{ asset('core/public/images/square.jpg') }}" alt="square image">
+                        <img class=""
+                            src="{{ getImage(getFilePath('coupon') . '/' . @$product->image, getFileSize('coupon')) }}"
+                            alt="square image">
                     </div>
                     <h3>Overview</h3>
-                    <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, ea libero! Assumenda
-                        nostrum perspiciatis reiciendis autem dignissimos quam veniam quis quod nisi? In veniam, ipsum
-                        distinctio dolores ut vel! Modi quidem amet alias, numquam ipsam deserunt nostrum dignissimos esse
-                        quas.</p>
-                    <h3 class="mt-4">Key Features</h3>
-                    <ul>
-                        <li>AI Interior Designer</li>
-                        <li>AI Landscape Designer</li>
-                        <li>AI color and material Editor</li>
-                        <li>AI Kitchen Designer</li>
-                        <li>AI Under construction Property Visualizer</li>
-                        <li>AI Space Declutering</li>
-                        <li>AI virtual Renovation</li>
-                        <li>AI virtual Staging</li>
-                    </ul>
-                    <!--  -->
-                    <h3 class="mt-5">ReimagineHome AI Use Cases</h3>
-                    <ul>
-                        <li>AI Interior Designer</li>
-                        <li>AI Landscape Designer</li>
-                        <li>AI color and material Editor</li>
-                        <li>AI Kitchen Designer</li>
-                        <li>AI Under construction Property Visualizer</li>
-                        <li>AI Space Declutering</li>
-                        <li>AI virtual Renovation</li>
-                        <li>AI virtual Staging</li>
-                    </ul>
-
-                    <h3 class="mt-4">Check it out</h3>
-
-                    <button class="tool_btn mt-3">Check out ReimagineHome AI</button>
-
-                    <h3 class="mt-5">Tags</h3>
-                    <p class="text-white">Home & Architecture</p>
+                    <p class="mt-4">{{ $product->description }}</p>
                 </div>
             </div>
             <!-- Tool Side Left End -->
@@ -195,15 +165,18 @@
                             <p class="text_gray">Featured</p>
                             <p class="text-end">Get Featured</p>
                         </div>
-                        <div class="featured_tool d-flex gap-3 mt-3">
-                            <div class="img_wrap">
-                                <img src="{{ asset('core/public/images/square.jpg') }}" alt="">
+                        @foreach ($featureProduct as $feature)
+                            <div class="featured_tool d-flex gap-3 mt-3">
+                                <div class="img_wrap">
+                                    <img src="{{ getImage(getFilePath('coupon') . '/' . @$feature->image, getFileSize('coupon')) }}"
+                                        alt="">
+                                </div>
+                                <div>
+                                    <h4>{{ $feature->title }}</h4>
+                                    <p class="mb-0">{{ Str::limit(strip_tags($feature->description), 75) }}</p>
+                                </div>
                             </div>
-                            <div>
-                                <h4>AI Forums</h4>
-                                <p class="mb-0">A community to discuss AI, GPTs, SaaS and more.</p>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
 
                     <div class="network mt-5">
@@ -211,7 +184,19 @@
                             <p class="text_gray mb-0 d-inline ">SaaS Driven Network</p>
                             <p class="mb-0 d-inline text-end">Learn more</p>
                         </div>
-                        <div class="network_tool d-flex justify-content-between my-4 gap-3">
+                        @foreach ($relatedProducts as $relatedProduct)
+                            <div class="network_tool d-flex justify-content-between my-4 gap-3">
+                                <div class="img_wrap">
+                                    <img src="{{ getImage(getFilePath('coupon') . '/' . @$relatedProduct->image, getFileSize('coupon')) }}"
+                                        alt="">
+                                </div>
+                                <div>
+                                    <h4>{{ $relatedProduct->title }}</h4>
+                                    <p class="mb-0">{{ Str::limit(strip_tags($relatedProduct->description), 75) }}</p>
+                                </div>
+                            </div>
+                        @endforeach
+                        {{-- <div class="network_tool d-flex justify-content-between my-4 gap-3">
                             <div class="img_wrap">
                                 <img src="{{ asset('core/public/images/square.jpg') }}" alt="">
                             </div>
@@ -237,16 +222,7 @@
                                 <h4>AI Forums</h4>
                                 <p class="mb-0">A community to discuss AI, GPTs, SaaS and more.</p>
                             </div>
-                        </div>
-                        <div class="network_tool d-flex justify-content-between my-4 gap-3">
-                            <div class="img_wrap">
-                                <img src="{{ asset('core/public/images/square.jpg') }}" alt="">
-                            </div>
-                            <div>
-                                <h4>AI Forums</h4>
-                                <p class="mb-0">A community to discuss AI, GPTs, SaaS and more.</p>
-                            </div>
-                        </div>
+                        </div> --}}
                     </div>
 
                 </div>
